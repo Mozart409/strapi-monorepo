@@ -5,33 +5,30 @@
   "description": "A Strapi application",
   "scripts": {
     "develop": "strapi develop",
-    "start": "strapi start",
-    "build": "strapi build",
+    "start": "NODE_ENV=production railway run strapi start",
+    "build": "NODE_ENV=production strapi build",
     "strapi": "strapi"
   },
   "devDependencies": {},
   "dependencies": {
+    "knex": "0.21.18",
+    "pg": "^8.7.1",
+    "sqlite3": "5.0.0",
     "strapi": "3.6.8",
     "strapi-admin": "3.6.8",
-    "strapi-utils": "3.6.8",
-    "strapi-plugin-content-type-builder": "3.6.8",
-    "strapi-plugin-content-manager": "3.6.8",
-    "strapi-plugin-users-permissions": "3.6.8",
-    "strapi-plugin-email": "3.6.8",
-    "strapi-plugin-upload": "3.6.8",
-    "strapi-plugin-i18n": "3.6.8",
     "strapi-connector-bookshelf": "3.6.8",
-    "knex": "0.21.18",
-    "sqlite3": "5.0.0",
-    "strapi-plugin-graphql": "3.6.8"
+    "strapi-middleware-cache": "^2.1.5",
+    "strapi-plugin-content-manager": "3.6.8",
+    "strapi-plugin-content-type-builder": "3.6.8",
+    "strapi-plugin-email": "3.6.8",
+    "strapi-plugin-graphql": "3.6.8",
+    "strapi-plugin-i18n": "3.6.8",
+    "strapi-plugin-upload": "3.6.8",
+    "strapi-plugin-users-permissions": "3.6.8",
+    "strapi-utils": "3.6.8"
   },
   "author": {
     "name": "A Strapi developer"
-  },
-  "strapi": {
-    "uuid": "7d589f87-163c-47ae-87aa-eaa3272d9a65",
-    "template": "https://github.com/strapi/strapi-template-corporate",
-    "starter": "https://github.com/strapi/strapi-starter-next-corporate"
   },
   "engines": {
     "node": ">=10.16.0 <=14.x.x",
