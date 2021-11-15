@@ -14,7 +14,11 @@ name: Lint Code Base
 #############################
 # Start the job on all push #
 #############################
-on: [push, pull_request]
+on:
+  pull_request:
+    branches:
+      - 'main'
+    types: ['synchronize']
 
 ###############
 # Set the Job #
@@ -44,6 +48,7 @@ jobs:
       ################################
       - name: Lint Code Base
         uses: github/super-linter/slim@v4.8.3
+        if: ${{ github.event_name == 'pull_request' }}
         env:
           VALIDATE_ALL_CODEBASE: false
           DEFAULT_BRANCH: ${{ github.base_ref }}
