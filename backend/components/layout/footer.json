@@ -9,11 +9,9 @@
     "logo": {
       "model": "file",
       "via": "related",
-      "allowedTypes": [
-        "images"
-      ],
+      "allowedTypes": ["images"],
       "plugin": "upload",
-      "required": false
+      "required": true
     },
     "columns": {
       "type": "component",
@@ -21,7 +19,8 @@
       "component": "elements.footer-section"
     },
     "smallText": {
-      "type": "string"
+      "type": "string",
+      "required": true
     }
   }
 }
