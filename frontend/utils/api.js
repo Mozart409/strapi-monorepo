@@ -35,11 +35,13 @@ export async function fetchAPI(path, options = {}) {
 export async function getPageData(params, locale, preview) {
   const slug = params.slug.join('/')
   // Find the pages that match this slug
-  const pagesData = await fetchAPI(
+  /* const pagesData = await fetchAPI(
     `/pages?slug=${slug}&_locale=${locale}&status=published${
       preview ? '&status=draft' : ''
     }`
-  )
+  ) */
+
+  const pagesData = await fetchAPI(`/pages?slug=${slug}&_locale=${locale}`)
 
   // Make sure we found something, otherwise return null
   if (pagesData == null || pagesData.length === 0) {
