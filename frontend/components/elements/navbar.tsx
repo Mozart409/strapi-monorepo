@@ -1,16 +1,15 @@
-import { useState } from "react"
-import PropTypes from "prop-types"
-import Link from "next/link"
-import { useRouter } from "next/router"
+import { useState } from 'react'
+import PropTypes from 'prop-types'
+import Link from 'next/link'
+import { useRouter } from 'next/router'
 
-import { getButtonAppearance } from "utils/button"
-import { mediaPropTypes, linkPropTypes, buttonLinkPropTypes } from "utils/types"
-import { MdMenu } from "react-icons/md"
-import MobileNavMenu from "./mobile-nav-menu"
-import ButtonLink from "./button-link"
-import NextImage from "./image"
-import CustomLink from "./custom-link"
-import LocaleSwitch from "../locale-switch"
+import { getButtonAppearance } from 'utils/button'
+import { mediaPropTypes, linkPropTypes, buttonLinkPropTypes } from 'utils/types'
+import MobileNavMenu from './mobile-nav-menu'
+import ButtonLink from './button-link'
+import NextImage from './image'
+import CustomLink from './custom-link'
+import LocaleSwitch from '../locale-switch'
 
 const Navbar = ({ navbar, pageContext }) => {
   const router = useRouter()
@@ -53,14 +52,27 @@ const Navbar = ({ navbar, pageContext }) => {
               onClick={() => setMobileMenuIsShown(true)}
               className="p-1 block md:hidden"
             >
-              <MdMenu className="h-8 w-auto" />
+              <div className="h-8 w-auto">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  className="h-5 w-5"
+                  viewBox="0 0 20 20"
+                  fill="currentColor"
+                >
+                  <path
+                    fillRule="evenodd"
+                    d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM9 15a1 1 0 011-1h6a1 1 0 110 2h-6a1 1 0 01-1-1z"
+                    clipRule="evenodd"
+                  />
+                </svg>
+              </div>
             </button>
             {/* CTA button on desktop */}
             {navbar.button && (
               <div className="hidden md:block">
                 <ButtonLink
                   button={navbar.button}
-                  appearance={getButtonAppearance(navbar.button.type, "light")}
+                  appearance={getButtonAppearance(navbar.button.type, 'light')}
                   compact
                 />
               </div>

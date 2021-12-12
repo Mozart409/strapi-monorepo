@@ -1,10 +1,11 @@
 module.exports = {
   plugins: [
-    "postcss-import",
-    "tailwindcss",
-    "postcss-flexbugs-fixes",
-    "postcss-nesting",
-    "postcss-custom-properties",
-    "autoprefixer",
+    'postcss-import',
+    'tailwindcss/nesting',
+    'tailwindcss',
+    'postcss-nesting',
+    'postcss-flexbugs-fixes',
+    'postcss-custom-properties',
+    'autoprefixer',
   ],
 }

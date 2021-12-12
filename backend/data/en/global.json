@@ -101,6 +101,12 @@
       ],
       "logo": null
     },
-    "favicon": null
+    "favicon": null,
+    "localizations": [
+      {
+        "id": 2,
+        "locale": "fr"
+      }
+    ]
   }
 }

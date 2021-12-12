@@ -1,15 +1,20 @@
 {
-  "pagesDE": [
+  "pagesFR": [
     {
-      "id": 1,
+      "id": 5,
       "slug": "",
-      "locale": "de",
-
+      "locale": "fr",
+      "localizations": [
+        {
+          "id": 1,
+          "locale": "en"
+        }
+      ],
       "shortName": "Home",
       "status": "published",
       "metadata": {
-        "metaTitle": "Strapi Unternehem",
-        "metaDescription": "Build a fully editable site with Strapi",
+        "metaTitle": "Strapi corporate site starter",
+        "metaDescription": "Construire un site modifiable avec Strapi",
         "twitterCardType": "summary",
         "twitterUsername": null,
         "shareImage": null
@@ -17,21 +22,21 @@
       "contentSections": [
         {
           "__component": "sections.hero",
-          "title": "Der beste Weg ihre Unternehmen zu gestalten",
-          "label": "New Strapi starter",
-          "description": "Get started with your Strapi business website in seconds.",
-          "smallTextWithLink": "Want to build your own from scratch? Tutorial coming soon",
+          "title": "La meilleure façon de faire votre site Corporate",
+          "label": "Nouveau starter Strapi",
+          "description": "Commencer vite avec votre site corporate",
+          "smallTextWithLink": "Vous voulez construire votre propre starter? Guide à venir",
           "buttons": [
             {
               "url": "https://github.com/strapi/strapi-template-corporate",
               "newTab": false,
-              "text": "Get started",
+              "text": "Commencer",
               "type": "primary"
             },
             {
               "url": "https://github.com/strapi/strapi-template-corporate",
               "newTab": true,
-              "text": "See the code",
+              "text": "Voir le code",
               "type": "secondary"
             }
           ],
@@ -41,22 +46,22 @@
           "__component": "sections.feature-rows-group",
           "features": [
             {
-              "title": "Die Marketing Abteilung kann Seiten erstellen",
-              "description": "Thanks to a pre-built list of UI sections, marketers can design exactly the pages they want.",
+              "title": "Les équipes marketing peuvent maintenant faire leurs propres pages",
+              "description": "Grace à une liste pré-construite de blocs UI, les équipes marketing peuvent faire la mise en page exactement comme elles veulent",
               "link": {
                 "url": "#",
                 "newTab": false,
-                "text": "View the list of UI sections"
+                "text": "Voir la liste de blocs UI"
               },
               "media": null
             },
             {
-              "title": "Lassen Sie Ihre Entwickler in Ruhe",
-              "description": "You can publish, edit and delete pages without help from developers. Your technical team can finally focus on their tasks.",
+              "title": "Laissez vos développeurs tranquilles",
+              "description": "Vous pouvez publier, modifier, et supprimer des pages sans l'aide d'un développeur.  Votre équipe technique peut enfin se concentrer sur d'autre tâches.",
               "link": {
                 "url": "#",
                 "newTab": false,
-                "text": "View how to create a page"
+                "text": "Voir comment créer une page"
               },
               "media": null
             }
@@ -66,26 +71,26 @@
           "__component": "sections.feature-columns-group",
           "features": [
             {
-              "title": "Vorschau der Änderungen",
-              "description": "Thanks to an integrated Preview Mode, you can visualize your pages before publishing them.",
+              "title": "Visualisez vos changments",
+              "description": "Grace à un mode preview, vous pouvez voir vos pages avant de les publier.",
               "icon": null
             },
             {
-              "title": "Fully responsive",
-              "description": "This starter works well on all screens, whether it's mobile, tablet or desktop.",
+              "title": "100% responsive",
+              "description": "Ce starter marche sur toutes les tailles d'écrans.",
               "icon": null
             },
             {
-              "title": "Easy to customize",
-              "description": "We use Tailwind for styling. You can change your site's theme without digging through the code.",
+              "title": "Facile à personnaliser",
+              "description": "On utilise Tailwind pour les styles. Vous pouvez changez le thème de votre site sans avoir besoin d'aller dans le code.",
               "icon": null
             }
           ]
         },
         {
           "__component": "sections.testimonials-group",
-          "title": "Your customer testimonials here",
-          "description": "This section is where you can showcase your customers. Insert quotes, and show the logos of companies who like your product",
+          "title": "Ici, les témoignages des vos clients.",
+          "description": "Dans cette partie, vous pouvez mettre en avant vos clients.  Mettez des citations, et montrez les logos des entreprises qui aiment votre produit.",
           "link": {
             "url": "#",
             "newTab": false,
@@ -108,8 +113,8 @@
           "testimonials": [
             {
               "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
-              "authorName": "Your Customer Name",
-              "authorTitle": "A happy customer",
+              "authorName": "Nom d'un(e) Client(e) ici",
+              "authorTitle": "Un(e) Client(e) Satisfait(e)",
               "link": "#",
               "logo": null,
               "picture": null
@@ -118,11 +123,11 @@
         },
         {
           "__component": "sections.lead-form",
-          "title": "Subscribe To Our Newsletter",
+          "title": "S'inscrire à notre Newsletter",
           "emailPlaceholder": "email@company.com",
           "submitButton": {
             "__component": "links.button",
-            "text": "Subscribe",
+            "text": "S'inscrire",
             "type": "primary"
           },
           "location": "Home Page Bottom"
@@ -134,13 +139,13 @@
             {
               "url": "https://github.com/strapi/strapi-template-corporate",
               "newTab": false,
-              "text": "Get started",
+              "text": "Commencer",
               "type": "primary"
             },
             {
               "url": "https://github.com/strapi/strapi-template-corporate",
               "newTab": false,
-              "text": "See the code",
+              "text": "Voir le code",
               "type": "secondary"
             }
           ]
@@ -148,15 +153,20 @@
       ]
     },
     {
-      "id": 2,
-      "slug": "preise",
-      "locale": "de",
-
-      "shortName": "Preise",
+      "id": 6,
+      "slug": "pricing",
+      "locale": "fr",
+      "localizations": [
+        {
+          "id": 2,
+          "locale": "en"
+        }
+      ],
+      "shortName": "Pricing",
       "status": "published",
       "metadata": {
-        "metaTitle": "Preise",
-        "metaDescription": "The different plans",
+        "metaTitle": "Pricing",
+        "metaDescription": "Les différentes offres",
         "twitterCardType": "summary",
         "twitterUsername": null,
         "shareImage": null
@@ -164,59 +174,59 @@
       "contentSections": [
         {
           "__component": "sections.pricing",
-          "title": "Clear pricing table",
+          "title": "Tableau de tarifs",
           "plans": [
             {
               "name": "Hobby",
-              "description": "Perfect for side projects",
+              "description": "Parfait pour des projets personnels",
               "isRecommended": null,
               "price": 0,
-              "pricePeriod": "forever",
+              "pricePeriod": "toujours",
               "features": [
                 {
-                  "name": "A cool feature"
+                  "name": "Voilà une feature"
                 },
                 {
-                  "name": "Another cool feature"
+                  "name": "Une autre"
                 },
                 {
-                  "name": "Some other cool feature"
+                  "name": "Encore une autre"
                 }
               ]
             },
             {
               "name": "Premium",
-              "description": "A more advanced plan for SMBs",
+              "description": "Un plan plus avancé",
               "isRecommended": true,
               "price": 20,
-              "pricePeriod": "per month",
+              "pricePeriod": "par mois",
               "features": [
                 {
-                  "name": "The coolest feature"
+                  "name": "Fonctionnalité 1"
                 },
                 {
-                  "name": "Nice feature"
+                  "name": "Fonctionnalité 2"
                 },
                 {
-                  "name": "Fun feature"
+                  "name": "Fonctionnalité 3"
                 }
               ]
             },
             {
-              "name": "Enterprise",
-              "description": "For large companies needs",
+              "name": "Entreprise",
+              "description": "Pour les besoin des grands entreprises",
               "isRecommended": null,
               "price": 299,
-              "pricePeriod": "per month",
+              "pricePeriod": "par mois",
               "features": [
                 {
-                  "name": "Amazing feature"
+                  "name": "Fonctionnalité 1"
                 },
                 {
-                  "name": "Wow effect feature"
+                  "name": "Fonctionnalité 2"
                 },
                 {
-                  "name": "Mesmerizing feature"
+                  "name": "Fonctionnalité 3"
                 }
               ]
             }
@@ -225,14 +235,19 @@
       ]
     },
     {
-      "id": 3,
-      "slug": "geheim",
-      "locale": "de",
-
-      "shortName": "Geheim",
+      "id": 7,
+      "slug": "secret",
+      "locale": "fr",
+      "localizations": [
+        {
+          "id": 3,
+          "locale": "en"
+        }
+      ],
+      "shortName": "Secret",
       "status": "draft",
       "metadata": {
-        "metaTitle": "Geheim seite",
+        "metaTitle": "Page secrète",
         "metaDescription": "Preview-only page",
         "twitterCardType": "summary",
         "twitterUsername": null,
@@ -241,20 +256,25 @@
       "contentSections": [
         {
           "__component": "sections.rich-text",
-          "content": "## Geheim seite\n\nYou can only view this page in Preview Mode."
+          "content": "## Page secrète. \n\n Vous seul pouvez voir cette page en Preview Mode"
         }
       ]
     },
     {
-      "id": 4,
-      "slug": "kontakt",
-      "locale": "de",
-
-      "shortName": "Kontakt",
+      "id": 8,
+      "slug": "contact",
+      "locale": "fr",
+      "localizations": [
+        {
+          "id": 4,
+          "locale": "en"
+        }
+      ],
+      "shortName": "Contact",
       "status": "published",
       "metadata": {
-        "metaTitle": "Kontakt",
-        "metaDescription": "Get in touch with our team",
+        "metaTitle": "Nous Contacter",
+        "metaDescription": "Contactez notre équipe",
         "twitterCardType": "summary",
         "twitterUsername": null,
         "shareImage": null
@@ -262,7 +282,7 @@
       "contentSections": [
         {
           "__component": "sections.rich-text",
-          "content": "# Get in touch\n\n> This is an example of a page that relies almost entirely on the RichText section. It's useful for blog articles, or content-heavy pages like legal terms.\n\nWe'd love to hear from you.\n\n## Social media\n\n* [Twitter](#)\n* [Twitter](#)\n* [Twitter](#)\n\n## Postal address\n\n404 Headless Street\n__92210__ **Saint Cloud**, *France*\n\nLorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+          "content": "# Contactez nous\n\n> Ceci est un exemple d'une page qui repose presque entièrement sur le composant RichText. Vous pouvez l'utiliser pour des articles de blog, ou pour des pages comportant beaucoup de texte, comme par exemple les conditions d'utilisation.\n\nNous aimerions beaucoup avoir vos retours.\n\n## Social media\n\n* [Twitter](#)\n* [Twitter](#)\n* [Twitter](#)\n\n## Postal address\n\n404 Headless Street\n__92210__ **Saint Cloud**, *France*\n\nLorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
         },
         {
           "__component": "sections.bottom-actions",
@@ -271,13 +291,13 @@
             {
               "url": "#",
               "newTab": false,
-              "text": "Send an email",
+              "text": "Envoyer un mail",
               "type": "primary"
             },
             {
               "url": "#",
               "newTab": false,
-              "text": "DM us on Twitter",
+              "text": "DM nous sur Twitter",
               "type": "secondary"
             }
           ]

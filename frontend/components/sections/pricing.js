@@ -1,5 +1,4 @@
-import { MdCheckBox } from "react-icons/md"
-import classNames from "classnames"
+import classNames from 'classnames'
 
 const Pricing = ({ data }) => {
   return (
@@ -10,15 +9,15 @@ const Pricing = ({ data }) => {
           <div
             className={classNames(
               // Common classes
-              "rounded-md border-2 py-4 px-4 flex-1 md:w-lg",
+              'rounded-md border-2 py-4 px-4 flex-1 md:w-lg',
               // Normal plan
               {
-                "bg-gray-100 text-gray-900 border-gray-300":
+                'bg-gray-100 text-gray-900 border-gray-300':
                   !plan.isRecommended,
               },
               // Recommended plan
               {
-                "bg-primary-100 text-primary-900 border-primary-300":
+                'bg-primary-100 text-primary-900 border-primary-300':
                   plan.isRecommended,
               }
             )}
@@ -26,15 +25,15 @@ const Pricing = ({ data }) => {
           >
             <h2 className="text-2xl">{plan.name}</h2>
             <p
-              className={classNames("mt-4 text-lg", {
-                "text-primary-700": plan.isRecommended,
-                "text-gray-700": !plan.isRecommended,
+              className={classNames('mt-4 text-lg', {
+                'text-primary-700': plan.isRecommended,
+                'text-gray-700': !plan.isRecommended,
               })}
             >
               {plan.description}
             </p>
             <p className="text-3xl mt-4">
-              {plan.price === 0 ? "Free " : `$${plan.price} `}
+              {plan.price === 0 ? 'Free ' : `$${plan.price} `}
               <span className="text-base font-medium">{plan.pricePeriod}</span>
             </p>
             <ul className="mt-4 flex flex-col gap-3">
@@ -44,7 +43,21 @@ const Pricing = ({ data }) => {
                   key={feature.id}
                 >
                   <span>{feature.name}</span>
-                  <MdCheckBox className="h-6 w-auto text-gray-900" />
+
+                  <div className="h-6 w-auto text-gray-900">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      className="h-5 w-5"
+                      viewBox="0 0 20 20"
+                      fill="currentColor"
+                    >
+                      <path
+                        fillRule="evenodd"
+                        d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                        clipRule="evenodd"
+                      />
+                    </svg>
+                  </div>
                 </li>
               ))}
             </ul>

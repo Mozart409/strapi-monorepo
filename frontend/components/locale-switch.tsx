@@ -1,13 +1,13 @@
-import { useEffect, useState, useRef } from "react"
-import { useRouter } from "next/router"
-import PropTypes from "prop-types"
-import Link from "next/link"
+import { useEffect, useState, useRef } from 'react'
+import { useRouter } from 'next/router'
+import PropTypes from 'prop-types'
+import Link from 'next/link'
 
-import Cookies from "js-cookie"
-import { MdExpandMore } from "react-icons/md"
-import WorldIcon from "./icons/world"
+import Cookies from 'js-cookie'
+import WorldIcon from './icons/world'
 
-import { useOnClickOutside } from "../utils/hooks"
+import { useOnClickOutside } from '../utils/hooks'
+import { getLocalizedPage, localizePath } from 'utils/localize'
 
 const LocaleSwitch = ({ pageContext }) => {
   const isMounted = useRef(false)
@@ -19,7 +19,7 @@ const LocaleSwitch = ({ pageContext }) => {
   const handleLocaleChange = async (selectedLocale) => {
     // Persist the user's language preference
     // https://nextjs.org/docs/advanced-features/i18n-routing#leveraging-the-next_locale-cookie
-    Cookies.set("NEXT_LOCALE", selectedLocale)
+    Cookies.set('NEXT_LOCALE', selectedLocale)
     setLocale(selectedLocale)
   }
 
@@ -27,7 +27,7 @@ const LocaleSwitch = ({ pageContext }) => {
   useOnClickOutside(select, () => setShowing(false))
 
   useEffect(() => {
-    const localeCookie = Cookies.get("NEXT_LOCALE")
+    const localeCookie = Cookies.get('NEXT_LOCALE')
     if (!localeCookie) {
       handleLocaleChangeRef.current(router.locale)
     }
@@ -67,11 +67,24 @@ const LocaleSwitch = ({ pageContext }) => {
       >
         <WorldIcon />
         <span className="capitalize">{locale}</span>
-        <MdExpandMore className="ml-1 text-primary-600" />
+        <div className="ml-1 text-primary-600">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            className="h-5 w-5"
+            viewBox="0 0 20 20"
+            fill="currentColor"
+          >
+            <path
+              fillRule="evenodd"
+              d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+              clipRule="evenodd"
+            />
+          </svg>
+        </div>
       </button>
       <div
         className={`w-full bg-white p-1 mt-1 shadow-lg rounded-md ${
-          showing ? "absolute" : "hidden"
+          showing ? 'absolute' : 'hidden'
         }`}
       >
         {pageContext.localizedPaths &&
@@ -86,7 +99,7 @@ const LocaleSwitch = ({ pageContext }) => {
               >
                 <p
                   onClick={() => handleLocaleChange(locale)}
-                  className="capitalize hover:bg-primary-50 hover:text-primary-600  cursor-pointer p-2 rounded-md text-center hover:text-primary-600"
+                  className="capitalize hover:bg-primary-50 hover:text-primary-600  cursor-pointer p-2 rounded-md text-center"
                 >
                   {locale}
                 </p>

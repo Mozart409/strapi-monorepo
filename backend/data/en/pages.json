@@ -4,7 +4,12 @@
       "id": 1,
       "slug": "",
       "locale": "en",
-
+      "localizations": [
+        {
+          "id": 5,
+          "locale": "fr"
+        }
+      ],
       "shortName": "Home",
       "status": "published",
       "metadata": {
@@ -151,7 +156,12 @@
       "id": 2,
       "slug": "pricing",
       "locale": "en",
-
+      "localizations": [
+        {
+          "id": 6,
+          "locale": "fr"
+        }
+      ],
       "shortName": "Pricing",
       "status": "published",
       "metadata": {
@@ -228,7 +238,12 @@
       "id": 3,
       "slug": "secret",
       "locale": "en",
-
+      "localizations": [
+        {
+          "id": 7,
+          "locale": "fr"
+        }
+      ],
       "shortName": "Secret",
       "status": "draft",
       "metadata": {
@@ -249,7 +264,12 @@
       "id": 4,
       "slug": "contact",
       "locale": "en",
-
+      "localizations": [
+        {
+          "id": 8,
+          "locale": "fr"
+        }
+      ],
       "shortName": "Contact",
       "status": "published",
       "metadata": {

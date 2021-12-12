@@ -1,0 +1,3 @@
+User-agent: *
+Disallow:
+Sitemap: https://ibexion.bike/sitemap.xml

@@ -1,14 +1,24 @@
-import { useState } from "react"
-import Navbar from "./elements/navbar"
-import Footer from "./elements/footer"
-import NotificationBanner from "./elements/notification-banner"
+import React, { useState } from 'react'
+import Navbar from './elements/navbar'
+import Footer from './elements/footer'
+import NotificationBanner from './elements/notification-banner'
 
-const Layout = ({ children, global, pageContext }) => {
+interface Props {
+  children: JSX.Element | JSX.Element[]
+  global: {
+    navbar: unknown
+    footer: unknown
+    notificationBanner: unknown
+  }
+  pageContext
+}
+
+const Layout: React.FC = ({ children, global, pageContext }: Props) => {
   const { navbar, footer, notificationBanner } = global
 
   const [bannerIsShown, setBannerIsShown] = useState(true)
   return (
-    <div className="flex flex-col justify-between min-h-screen">
+    <div className="flex flex-col justify-between min-h-screen font-sans antialiased">
       {/* Aligned to the top */}
       <div className="flex-1">
         {notificationBanner && bannerIsShown && (

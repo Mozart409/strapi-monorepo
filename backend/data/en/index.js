@@ -3,5 +3,5 @@ const { pages } = require("./pages.json");
 
 module.exports = {
   global,
-  pages
-}
+  pages,
+};
