@@ -22,7 +22,7 @@ export default function CoverImageComp({
   return (
     <div
       className={cx('block container mx-auto ', {
-        'border-b-8 border-canary-blue-500': image_border === true,
+        'border-b-8 border-canary-primary-500': image_border === true,
       })}
     >
       <Image

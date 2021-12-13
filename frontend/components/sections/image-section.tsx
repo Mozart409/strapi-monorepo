@@ -9,9 +9,9 @@ interface IImageSectionProps {
 const ImageSection: React.FunctionComponent<IImageSectionProps> = ({
   data,
 }) => {
-  return (
-    <div className="container grid grid-cols-1 mx-auto max-w-prose md:max-w-screen-md lg:max-w-screen-lg">
-      {data.link ? (
+  if (data.link)
+    return (
+      <div className="container grid grid-cols-1 mx-auto max-w-prose md:max-w-screen-md lg:max-w-screen-lg">
         <CustomLink link={data?.link}>
           <CustomImage
             media={data?.picture}
@@ -20,14 +20,16 @@ const ImageSection: React.FunctionComponent<IImageSectionProps> = ({
             className="object-contain mx-auto w-full"
           />
         </CustomLink>
-      ) : (
-        <CustomImage
-          media={data?.picture}
-          width={1024}
-          height={768}
-          className="object-contain mx-auto w-full"
-        />
-      )}
+      </div>
+    )
+  return (
+    <div className="container grid grid-cols-1 mx-auto max-w-prose md:max-w-screen-md lg:max-w-screen-lg">
+      <CustomImage
+        media={data?.picture}
+        width={1024}
+        height={768}
+        className="object-contain mx-auto w-full"
+      />
     </div>
   )
 }

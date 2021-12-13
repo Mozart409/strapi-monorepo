@@ -21,9 +21,9 @@ type Props = {
         label: string
         dynamic_rich_text: {
           id: number
-          name: string
+          shortName: string
           content: string
-          label: string
+          slug: string
           published_at: string
           created_at: string
           updated_at: string
@@ -37,22 +37,22 @@ function DynamicRichText({ data }: Props): ReactElement {
   //
 
   const [selected, setSelected] = useState({
-    name: data?.RichTextSelektor[0].dynamic_rich_text?.name,
-    label: data?.RichTextSelektor[0].dynamic_rich_text?.label,
+    slug: data?.RichTextSelektor[0].dynamic_rich_text?.slug,
+    shortName: data?.RichTextSelektor[0].dynamic_rich_text?.shortName,
   })
 
-  useEffect(() => {
+  /* useEffect(() => {
     window.dataLayer.push({
       event: 'dynamic-content',
       selected: selected.name,
     })
     return () => {
-      /* window.dataLayer.push({
-        event: 'dynamic-content',
-        selected: selected.name,
-      }) */
+      // window.dataLayer.push({
+      //  event: 'dynamic-content',
+      //  selected: selected.name,
+      //}) 
     }
-  }, [selected])
+  }, [selected]) */
 
   const [dyHide, setDyHide] = useState(true)
 
@@ -60,8 +60,8 @@ function DynamicRichText({ data }: Props): ReactElement {
     status,
     data: dynamicData,
     error,
-  } = useQuery(['pageData', selected.name], async () =>
-    getDynamicRT(selected.name)
+  } = useQuery(['pageData', selected.slug], async () =>
+    getDynamicRT(selected.slug)
   )
 
   const handleChange = () => {
@@ -74,7 +74,7 @@ function DynamicRichText({ data }: Props): ReactElement {
 
   return (
     <div className="container">
-      <button className="m-2 bg-indigo-500 text-white" onClick={handleChange}>
+      <button className="m-2 bg-primary-500 text-white" onClick={handleChange}>
         Test DataLayer
       </button>
       {dynamicData ? (
@@ -93,7 +93,9 @@ function DynamicRichText({ data }: Props): ReactElement {
                   </Listbox.Label>
                   <div className="relative mt-1">
                     <Listbox.Button className="relative py-2 pr-10 pl-3 w-full text-left bg-white rounded-md border border-gray-300 shadow-sm cursor-default sm:text-sm focus:ring-1 focus:outline-none focus:border-primary-500 focus:ring-primary-500">
-                      <span className="block truncate">{selected.label}</span>
+                      <span className="block truncate">
+                        {selected.shortName}
+                      </span>
                       <span className="flex absolute inset-y-0 right-0 items-center pr-2 pointer-events-none">
                         <SelectorIcon
                           className="w-5 h-5 text-gray-400"
@@ -133,7 +135,7 @@ function DynamicRichText({ data }: Props): ReactElement {
                                       'block truncate'
                                     )}
                                   >
-                                    {item.dynamic_rich_text.label}
+                                    {item.dynamic_rich_text.shortName}
                                   </span>
 
                                   {selected ? (
@@ -237,8 +239,13 @@ function DynamicRichText({ data }: Props): ReactElement {
             </div>
           </div>
          */}
-          <div className="p-3 my-8 bg-gray-200 rounded">
-            <MarkdownRender>{dynamicData.content}</MarkdownRender>
+
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="max-w-3xl mx-auto">
+              <div className="p-3 my-8 bg-gray-200 rounded">
+                <MarkdownRender>{dynamicData.content}</MarkdownRender>
+              </div>
+            </div>
           </div>
         </div>
       ) : null}

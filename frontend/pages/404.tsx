@@ -6,7 +6,7 @@ export default function Custom404() {
       <div className="py-16 px-4 min-h-full bg-white sm:py-24 sm:px-6 md:grid md:place-items-center lg:px-8">
         <div className="mx-auto max-w-max">
           <div className="sm:flex">
-            <p className="text-4xl font-extrabold text-indigo-600 sm:text-5xl">
+            <p className="text-4xl font-extrabold text-primary-600 sm:text-5xl">
               404
             </p>
             <div className="sm:ml-6">

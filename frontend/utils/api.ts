@@ -73,8 +73,8 @@ export async function getGlobalData(locale: string) {
   return global
 }
 
-export async function getDynamicRT(name: string) {
-  const richTextData = await fetchAPI(`/dynamic-rich-texts?name=${name}`)
+export async function getDynamicRT(slug: string) {
+  const richTextData = await fetchAPI(`/dynamic-rich-texts?slug=${slug}`)
 
   if (richTextData == null || richTextData.length === 0) {
     return null

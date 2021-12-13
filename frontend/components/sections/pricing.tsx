@@ -42,13 +42,13 @@ const Pricing = ({ data }: Pricing) => {
             {/* <div className="flex relative self-center p-0.5 mt-6 bg-gray-100 rounded-lg sm:mt-8">
             <button
               type="button"
-              className="relative py-2 w-1/2 text-sm font-medium text-gray-900 whitespace-nowrap bg-white rounded-md border-gray-200 shadow-sm sm:px-8 sm:w-auto focus:z-10 focus:ring-2 focus:ring-indigo-500 focus:outline-none"
+              className="relative py-2 w-1/2 text-sm font-medium text-gray-900 whitespace-nowrap bg-white rounded-md border-gray-200 shadow-sm sm:px-8 sm:w-auto focus:z-10 focus:ring-2 focus:ring-primary-500 focus:outline-none"
             >
               Monthly billing
             </button>
             <button
               type="button"
-              className="relative py-2 ml-0.5 w-1/2 text-sm font-medium text-gray-700 whitespace-nowrap rounded-md border border-transparent sm:px-8 sm:w-auto focus:z-10 focus:ring-2 focus:ring-indigo-500 focus:outline-none"
+              className="relative py-2 ml-0.5 w-1/2 text-sm font-medium text-gray-700 whitespace-nowrap rounded-md border border-transparent sm:px-8 sm:w-auto focus:z-10 focus:ring-2 focus:ring-primary-500 focus:outline-none"
             >
               Yearly billing
             </button>

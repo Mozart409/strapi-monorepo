@@ -10,7 +10,7 @@ interface CustomImageProps {
   height?: string | number
 }
 
-const NextImage = ({ media, className, width, height, ...props }) => {
+const NextImage = ({ media, className, ...props }) => {
   const { url, alternativeText } = media
 
   const loader = ({ src }) => {
