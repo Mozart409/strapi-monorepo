@@ -31,7 +31,12 @@ const Navbar = ({ navbar, pageContext }) => {
             <ul className="hidden flex-row gap-4 items-baseline ml-10 list-none md:flex">
               {navbar.links.map((navLink) => (
                 <li key={navLink.id}>
-                  <CustomLink link={navLink} locale={router.locale}>
+                  {/* <CustomLink link={navLink} locale={router.locale}>
+                    <div className="py-1 px-2 hover:text-gray-900">
+                      {navLink.text}
+                    </div>
+                  </CustomLink> */}
+                  <CustomLink link={navLink}>
                     <div className="py-1 px-2 hover:text-gray-900">
                       {navLink.text}
                     </div>
