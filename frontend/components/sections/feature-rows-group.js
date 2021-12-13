@@ -1,7 +1,7 @@
-import classNames from "classnames"
-import NextImage from "../elements/image"
-import Video from "../elements/video"
-import CustomLink from "../elements/custom-link"
+import classNames from 'classnames'
+import NextImage from '../elements/image'
+import Video from '../elements/video'
+import CustomLink from '../elements/custom-link'
 
 const FeatureRowsGroup = ({ data }) => {
   return (
@@ -10,10 +10,10 @@ const FeatureRowsGroup = ({ data }) => {
         <div
           className={classNames(
             // Common classes
-            "flex flex-col justify-start md:justify-between md:items-center gap-10",
+            'flex flex-col justify-start md:justify-between md:items-center gap-10',
             {
-              "lg:flex-row": index % 2 === 0,
-              "lg:flex-row-reverse": index % 2 === 1,
+              'lg:flex-row': index % 2 === 0,
+              'lg:flex-row-reverse': index % 2 === 1,
             }
           )}
           key={feature.id}
@@ -31,13 +31,13 @@ const FeatureRowsGroup = ({ data }) => {
           {/* Media section */}
           <div className="w-full max-h-full lg:w-4/12 sm:9/12">
             {/* Images */}
-            {feature.media.mime.startsWith("image") && (
+            {feature.media.mime.startsWith('image') && (
               <div className="w-full h-auto">
                 <NextImage media={feature.media} />
               </div>
             )}
             {/* Videos */}
-            {feature.media.mime.startsWith("video") && (
+            {feature.media.mime.startsWith('video') && (
               <Video
                 media={feature.media}
                 className="w-full h-auto"

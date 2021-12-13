@@ -1,6 +1,7 @@
 import App from 'next/app'
 import type { AppProps, AppContext } from 'next/app'
 import Head from 'next/head'
+
 import ErrorPage from 'next/error'
 import { useRouter } from 'next/router'
 import { DefaultSeo } from 'next-seo'
@@ -8,7 +9,19 @@ import { getStrapiMedia } from 'utils/media'
 import { getGlobalData } from 'utils/api'
 import '@/styles/index.css'
 
+import toast, { Toaster } from 'react-hot-toast'
+import { QueryClient, QueryClientProvider } from 'react-query'
+import { ReactQueryDevtools } from 'react-query/devtools'
+
 const MyApp = ({ Component, pageProps }: AppProps) => {
+  const queryClient = new QueryClient()
+
+  /* const router = useRouter()
+
+  if (router.asPath === '/[[...slug]]') {
+    return null
+  } */
+
   // Extract the data we need
   const { global } = pageProps
   if (global == null) {
@@ -17,11 +30,13 @@ const MyApp = ({ Component, pageProps }: AppProps) => {
 
   const { metadata } = global
 
+  const shareImages: IMedia = metadata.shareImage.formats
   return (
     <>
       {/* Favicon */}
       <Head>
         <link rel="shortcut icon" href={getStrapiMedia(global.favicon.url)} />
+        <link rel="prefetch" href="/fonts/inter-var-latin.woff2" />
       </Head>
       {/* Global site metadata */}
       <DefaultSeo
@@ -29,7 +44,7 @@ const MyApp = ({ Component, pageProps }: AppProps) => {
         title="Page"
         description={metadata.metaDescription}
         openGraph={{
-          images: Object.values(metadata.shareImage.formats).map((image) => {
+          images: Object.values(shareImages).map((image) => {
             return {
               url: getStrapiMedia(image.url),
               width: image.width,
@@ -43,7 +58,10 @@ const MyApp = ({ Component, pageProps }: AppProps) => {
         }}
       />
       {/* Display the content */}
-      <Component {...pageProps} />
+      <QueryClientProvider client={queryClient}>
+        <Component {...pageProps} />
+        <ReactQueryDevtools initialIsOpen={false} />
+      </QueryClientProvider>
     </>
   )
 }

@@ -2,10 +2,20 @@ import PropTypes from 'prop-types'
 import { useLockBodyScroll } from 'utils/hooks'
 import { getButtonAppearance } from 'utils/button'
 import ButtonLink from './button-link'
-import NextImage from './image'
 import CustomLink from './custom-link'
+import CustomImage from './custom-image'
 
-const MobileNavMenu = ({ navbar, closeSelf }) => {
+interface MobileNavMenuProps {
+  navbar?: {
+    logo?: IMedia
+    mobileLogo?: IMedia
+    links?: ILink[]
+    button?: IButton
+  }
+  closeSelf?(...args: unknown[]): unknown
+}
+
+const MobileNavMenu = ({ navbar, closeSelf }: MobileNavMenuProps) => {
   // Prevent window scroll while mobile nav menu is open
   useLockBodyScroll()
 
