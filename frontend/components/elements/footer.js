@@ -12,20 +12,20 @@ const Footer = ({ footer }) => {
             <NextImage width="120" height="33" media={footer.logo} />
           )}
         </div>
-        <nav className="flex flex-wrap flex-row lg:gap-20 items-start lg:justify-end mb-10">
+        <nav className="flex flex-row flex-wrap items-start mb-10 lg:gap-20 lg:justify-end">
           {footer.columns.map((footerColumn) => (
             <div
               key={footerColumn.id}
-              className="mt-10 lg:mt-0 w-6/12 lg:w-auto"
+              className="mt-10 w-6/12 lg:mt-0 lg:w-auto"
             >
-              <p className="uppercase tracking-wide font-semibold">
+              <p className="font-semibold tracking-wide uppercase">
                 {footerColumn.title}
               </p>
               <ul className="mt-2">
                 {footerColumn.links.map((link) => (
                   <li
                     key={link.id}
-                    className="text-gray-700 py-1 px-1 -mx-1 hover:text-gray-900"
+                    className="py-1 px-1 -mx-1 text-gray-700 hover:text-gray-900"
                   >
                     <CustomLink link={link}>{link.text}</CustomLink>
                   </li>
@@ -35,7 +35,7 @@ const Footer = ({ footer }) => {
           ))}
         </nav>
       </div>
-      <div className="text-sm bg-gray-200 py-6 text-gray-700">
+      <div className="py-6 text-sm text-gray-700 bg-gray-200">
         <div className="container">{footer.smallText}</div>
       </div>
     </footer>

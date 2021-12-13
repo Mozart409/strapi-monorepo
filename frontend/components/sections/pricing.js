@@ -4,7 +4,7 @@ const Pricing = ({ data }) => {
   return (
     <div className="container py-12">
       <h1 className="text-4xl text-center">{data.title}</h1>
-      <div className="flex flex-col lg:flex-row gap-4 lg:justify-center mt-6">
+      <div className="flex flex-col gap-4 mt-6 lg:flex-row lg:justify-center">
         {data.plans.map((plan) => (
           <div
             className={classNames(
@@ -32,11 +32,11 @@ const Pricing = ({ data }) => {
             >
               {plan.description}
             </p>
-            <p className="text-3xl mt-4">
+            <p className="mt-4 text-3xl">
               {plan.price === 0 ? 'Free ' : `$${plan.price} `}
               <span className="text-base font-medium">{plan.pricePeriod}</span>
             </p>
-            <ul className="mt-4 flex flex-col gap-3">
+            <ul className="flex flex-col gap-3 mt-4">
               {plan.features.map((feature) => (
                 <li
                   className="flex flex-row justify-between items-center"
@@ -44,10 +44,10 @@ const Pricing = ({ data }) => {
                 >
                   <span>{feature.name}</span>
 
-                  <div className="h-6 w-auto text-gray-900">
+                  <div className="w-auto h-6 text-gray-900">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
-                      className="h-5 w-5"
+                      className="w-5 h-5"
                       viewBox="0 0 20 20"
                       fill="currentColor"
                     >

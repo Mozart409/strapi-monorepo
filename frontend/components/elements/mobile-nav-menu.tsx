@@ -10,7 +10,7 @@ const MobileNavMenu = ({ navbar, closeSelf }) => {
   useLockBodyScroll()
 
   return (
-    <div className="overflow-y-scroll fixed top-0 left-0 z-10 pb-6 w-screen h-screen bg-white py-6  border-b-2 border-gray-200 sm:py-2">
+    <div className="overflow-y-scroll fixed top-0 left-0 z-10 py-6 pb-6 w-screen h-screen bg-white border-b-2 border-gray-200 sm:py-2">
       <div className="container grid grid-cols-3 grid-flow-row justify-between items-center">
         {/* Top section */}
         <div></div>

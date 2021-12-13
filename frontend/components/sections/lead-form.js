@@ -13,7 +13,7 @@ const LeadForm = ({ data }) => {
 
   return (
     <div className="py-10 text-center">
-      <h1 className="text-3xl mb-10 font-bold mb-2">{data.title}</h1>
+      <h1 className="mb-2 mb-10 text-3xl font-bold">{data.title}</h1>
       <div className="flex flex-col items-center">
         <Formik
           initialValues={{ email: "" }}
@@ -40,9 +40,9 @@ const LeadForm = ({ data }) => {
         >
           {({ errors, touched, isSubmitting }) => (
             <div>
-              <Form className="flex flex-col md:flex-row gap-4">
+              <Form className="flex flex-col gap-4 md:flex-row">
                 <Field
-                  className="text-base focus:outline-none py-4 md:py-0 px-4 border-2 rounded-md"
+                  className="py-4 px-4 text-base rounded-md border-2 md:py-0 focus:outline-none"
                   type="email"
                   name="email"
                   placeholder={data.emailPlaceholder}
@@ -54,7 +54,7 @@ const LeadForm = ({ data }) => {
                   loading={loading}
                 />
               </Form>
-              <p className="text-red-500 h-12 text-sm mt-1 ml-2 text-left">
+              <p className="mt-1 ml-2 h-12 text-sm text-left text-red-500">
                 {(errors.email && touched.email && errors.email) || errors.api}
               </p>
             </div>

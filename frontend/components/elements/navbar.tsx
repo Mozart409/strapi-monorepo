@@ -18,21 +18,21 @@ const Navbar = ({ navbar, pageContext }) => {
   return (
     <>
       {/* The actual navbar */}
-      <nav className="border-gray-200 border-b-2 py-6 sm:py-2">
-        <div className="container flex flex-row items-center justify-between">
+      <nav className="py-6 border-b-2 border-gray-200 sm:py-2">
+        <div className="container flex flex-row justify-between items-center">
           {/* Content aligned to the left */}
           <div className="flex flex-row items-center">
             <Link href="/">
-              <a className="h-8 w-32">
+              <a className="w-32 h-8">
                 <NextImage width="120" height="33" media={navbar.logo} />
               </a>
             </Link>
             {/* List of links on desktop */}
-            <ul className="hidden list-none md:flex flex-row gap-4 items-baseline ml-10">
+            <ul className="hidden flex-row gap-4 items-baseline ml-10 list-none md:flex">
               {navbar.links.map((navLink) => (
                 <li key={navLink.id}>
                   <CustomLink link={navLink} locale={router.locale}>
-                    <div className="hover:text-gray-900 px-2 py-1">
+                    <div className="py-1 px-2 hover:text-gray-900">
                       {navLink.text}
                     </div>
                   </CustomLink>
@@ -50,12 +50,12 @@ const Navbar = ({ navbar, pageContext }) => {
             {/* Hamburger menu on mobile */}
             <button
               onClick={() => setMobileMenuIsShown(true)}
-              className="p-1 block md:hidden"
+              className="block p-1 md:hidden"
             >
-              <div className="h-8 w-auto">
+              <div className="w-auto h-8">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
-                  className="h-5 w-5"
+                  className="w-5 h-5"
                   viewBox="0 0 20 20"
                   fill="currentColor"
                 >

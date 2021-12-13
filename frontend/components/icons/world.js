@@ -2,7 +2,7 @@ import React from "react"
 
 const WorldIcon = () => {
   return (
-    <div className="w-4 h-4 mr-2 ">
+    <div className="mr-2 w-4 h-4">
       <svg
         className="fill-current text-primary-600"
         xmlns="http://www.w3.org/2000/svg"

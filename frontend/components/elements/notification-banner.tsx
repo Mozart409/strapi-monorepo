@@ -21,15 +21,15 @@ const NotificationBanner = ({ data: { text, type }, closeSelf }: IProps) => {
         }
       )}
     >
-      <div className="container flex flex-row justify-between items-center ">
-        <div className="rich-text-banner flex-1">
+      <div className="container flex flex-row justify-between items-center">
+        <div className="flex-1 rich-text-banner">
           <Markdown>{text}</Markdown>
         </div>
-        <button onClick={closeSelf} className="px-1 py-1 flex-shrink-0">
-          <div className="h-6 w-auto text-white">
+        <button onClick={closeSelf} className="flex-shrink-0 py-1 px-1">
+          <div className="w-auto h-6 text-white">
             <svg
               xmlns="http://www.w3.org/2000/svg"
-              className="h-5 w-5"
+              className="w-5 h-5"
               viewBox="0 0 20 20"
               fill="currentColor"
             >
