@@ -1,8 +1,6 @@
 import classNames from 'classnames'
-import PropTypes from 'prop-types'
-import { buttonLinkPropTypes } from 'utils/types'
-import CustomLink from './custom-link'
 
+import CustomLink from './custom-link'
 const ButtonContent = ({ button, appearance, compact }) => {
   return (
     <div
@@ -39,8 +37,16 @@ const ButtonContent = ({ button, appearance, compact }) => {
     </div>
   )
 }
-
-const ButtonLink = ({ button, appearance, compact = false }) => {
+type ButtonLinkProps = {
+  button?: any
+  appearance?: 'dark' | 'white-outline' | 'white' | 'dark-outline'
+  compact?: boolean
+}
+const ButtonLink: React.FC<ButtonLinkProps> = ({
+  button,
+  appearance,
+  compact = false,
+}) => {
   return (
     <CustomLink link={button}>
       <ButtonContent
@@ -51,16 +57,4 @@ const ButtonLink = ({ button, appearance, compact = false }) => {
     </CustomLink>
   )
 }
-
-ButtonLink.propTypes = {
-  button: buttonLinkPropTypes,
-  appearance: PropTypes.oneOf([
-    'dark',
-    'white-outline',
-    'white',
-    'dark-outline',
-  ]),
-  compact: PropTypes.bool,
-}
-
 export default ButtonLink

@@ -1,5 +1,4 @@
 import React from 'react'
-
 const Loader = () => {
   return (
     <svg
@@ -25,5 +24,4 @@ const Loader = () => {
     </svg>
   )
 }
-
 export default Loader

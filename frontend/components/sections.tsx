@@ -8,6 +8,10 @@ import TestimonialsGroup from '@/components/sections/testimonials-group'
 import RichText from './sections/rich-text'
 import Pricing from './sections/pricing'
 import LeadForm from './sections/lead-form'
+import LevelModel from './sections/level-model'
+import ImageSection from './sections/image-section'
+import DynamicRichText from './sections/dynamic-rich-text'
+import DangerousHTML from './sections/dangerous-html'
 
 // Map Strapi sections to section components
 const sectionComponents = {
@@ -20,6 +24,10 @@ const sectionComponents = {
   'sections.rich-text': RichText,
   'sections.pricing': Pricing,
   'sections.lead-form': LeadForm,
+  'sections.level-model': LevelModel,
+  'sections.image': ImageSection,
+  'sections.dynamic-content': DynamicRichText,
+  'sections.dangerous-html': DangerousHTML,
 }
 
 // Display a section individually

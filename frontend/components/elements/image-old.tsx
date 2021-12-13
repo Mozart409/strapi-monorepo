@@ -3,7 +3,14 @@ import Image from 'next/image'
 import PropTypes from 'prop-types'
 import { mediaPropTypes } from 'utils/types'
 
-const NextImage = ({ media, ...props }) => {
+interface CustomImageProps {
+  media?: IMedia
+  className?: string
+  width?: string | number
+  height?: string | number
+}
+
+const NextImage = ({ media, className, width, height, ...props }) => {
   const { url, alternativeText } = media
 
   const loader = ({ src }) => {
@@ -29,11 +36,6 @@ const NextImage = ({ media, ...props }) => {
       alt={alternativeText || ''}
     />
   )
-}
-
-Image.propTypes = {
-  media: mediaPropTypes.isRequired,
-  className: PropTypes.string,
 }
 
 export default NextImage

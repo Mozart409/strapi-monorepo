@@ -1,9 +1,17 @@
-import PropTypes from 'prop-types'
-import { linkPropTypes, mediaPropTypes } from 'utils/types'
 import NextImage from './image'
 import CustomLink from './custom-link'
-
-const Footer = ({ footer }) => {
+type FooterProps = {
+  footer?: {
+    logo: any
+    columns?: {
+      id: string | number
+      title: string
+      links?: any[]
+    }[]
+    smallText: string
+  }
+}
+const Footer: React.FC<FooterProps> = ({ footer }) => {
   return (
     <footer className="pt-12 bg-gray-100">
       <div className="container flex flex-col lg:flex-row lg:justify-between">
@@ -41,20 +49,4 @@ const Footer = ({ footer }) => {
     </footer>
   )
 }
-
-Footer.propTypes = {
-  footer: PropTypes.shape({
-    logo: mediaPropTypes.isRequired,
-    columns: PropTypes.arrayOf(
-      PropTypes.shape({
-        id: PropTypes.oneOfType([PropTypes.string, PropTypes.number])
-          .isRequired,
-        title: PropTypes.string.isRequired,
-        links: PropTypes.arrayOf(linkPropTypes),
-      })
-    ),
-    smallText: PropTypes.string.isRequired,
-  }),
-}
-
 export default Footer

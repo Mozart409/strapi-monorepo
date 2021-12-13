@@ -1,9 +1,16 @@
 import classNames from 'classnames'
-import PropTypes from 'prop-types'
-import { buttonLinkPropTypes } from 'utils/types'
-import Loader from './loader'
+import { MouseEventHandler } from 'react'
 
-const Button = ({
+import Loader from './loader'
+type ButtonProps = {
+  button?: any
+  appearance?: 'dark' | 'white-outline' | 'white' | 'dark-outline'
+  compact?: boolean
+  loading?: boolean
+  type: 'submit' | 'button'
+  handleClick: MouseEventHandler
+}
+const Button: React.FC<ButtonProps> = ({
   button,
   appearance,
   compact = false,
@@ -12,7 +19,7 @@ const Button = ({
   type,
 }) => {
   return (
-    <button link={button} onClick={handleClick} type={type}>
+    <button onClick={handleClick} type={type}>
       <div
         className={classNames(
           // Common classes
@@ -51,16 +58,4 @@ const Button = ({
     </button>
   )
 }
-
-Button.propTypes = {
-  button: buttonLinkPropTypes,
-  appearance: PropTypes.oneOf([
-    'dark',
-    'white-outline',
-    'white',
-    'dark-outline',
-  ]),
-  compact: PropTypes.bool,
-}
-
 export default Button
