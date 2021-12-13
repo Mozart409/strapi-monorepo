@@ -19,19 +19,22 @@
         {
           "url": "/pricing",
           "newTab": false,
-          "text": "Pricing"
+          "text": "Pricing",
+          "title": "Pricing"
         },
         {
           "url": "/contact",
           "newTab": false,
-          "text": "Contact"
+          "text": "Contact",
+          "title": "Contact"
         }
       ],
       "button": {
         "url": "#",
         "newTab": false,
         "text": "Sign up",
-        "type": "secondary"
+        "type": "secondary",
+        "title": "Sign up"
       },
       "logo": null
     },
@@ -44,12 +47,14 @@
             {
               "url": "#",
               "newTab": false,
-              "text": "Features"
+              "text": "Features",
+              "title": "Features"
             },
             {
               "url": "#",
               "newTab": false,
-              "text": "Sign up"
+              "text": "Sign up",
+              "title": "Sign up"
             }
           ]
         },
@@ -59,12 +64,14 @@
             {
               "url": "#",
               "newTab": false,
-              "text": "Privacy policy"
+              "text": "Privacy policy",
+              "title": "Privacy policy"
             },
             {
               "url": "#",
               "newTab": false,
-              "text": "Terms & conditions"
+              "text": "Terms & conditions",
+              "title": "Terms & conditions"
             }
           ]
         },
@@ -74,12 +81,14 @@
             {
               "url": "#",
               "newTab": false,
-              "text": "Careers"
+              "text": "Careers",
+              "title": "Careers"
             },
             {
               "url": "#",
               "newTab": false,
-              "text": "Team"
+              "text": "Team",
+              "title": "Team"
             }
           ]
         },
@@ -89,12 +98,14 @@
             {
               "url": "#",
               "newTab": false,
-              "text": "Twitter"
+              "text": "Twitter",
+              "title": "Twitter"
             },
             {
               "url": "#",
               "newTab": false,
-              "text": "LinkedIn"
+              "text": "LinkedIn",
+              "title": "LinkedIn"
             }
           ]
         }

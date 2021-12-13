@@ -1,7 +1,7 @@
 module.exports = {
   settings: {
     cache: {
-      enabled: true,
+      enabled: false,
       clearRelatedCache: true,
       models: [
         {

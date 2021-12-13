@@ -1,22 +1,21 @@
 import Link from 'next/link'
+import React from 'react'
 
 interface IProps {
   link: ILink
   children: JSX.Element | JSX.Element[]
 }
-
 const CustomLink = ({ link, children }: IProps) => {
-  const isInternalLink = link?.url?.startsWith('/')
-
-  // For internal links, use the Next.js Link component
-  if (isInternalLink) {
-    return (
-      <Link href="/[[...slug]]" as={link.url}>
-        <a alt={link?.alt} title={link?.title}>
-          {children}
-        </a>
-      </Link>
-    )
+  if (typeof link.url === 'string') {
+    const isInternalLink = link?.url?.startsWith('/')
+    if (isInternalLink) {
+      // For internal links, use the Next.js Link component
+      return (
+        <Link href="/[[...slug]]" as={link?.url}>
+          <a title={link?.title}>{children}</a>
+        </Link>
+      )
+    }
   }
 
   // Plain <a> tags for external links
@@ -26,7 +25,7 @@ const CustomLink = ({ link, children }: IProps) => {
         href={link.url}
         target="_blank"
         rel="noopener noreferrer"
-        alt={link?.alt}
+        title={link?.title}
       >
         {children}
       </a>

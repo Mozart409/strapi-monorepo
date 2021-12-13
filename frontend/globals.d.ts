@@ -8,6 +8,7 @@ export declare global {
   }
 
   interface IMedia {
+    formats: { [s: string]: unknown } | ArrayLike<unknown>
     id?: string | number
     alternativeText?: string
     caption?: string

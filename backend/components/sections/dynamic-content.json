@@ -3,7 +3,7 @@
   "info": {
     "name": "DynamicContent",
     "icon": "list",
-    "description": ""
+    "description": "You can dynamicly fetch content on the frontend"
   },
   "options": {},
   "attributes": {
