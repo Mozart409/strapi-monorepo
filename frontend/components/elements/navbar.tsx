@@ -1,17 +1,38 @@
 import { useState } from 'react'
-import PropTypes from 'prop-types'
+
 import Link from 'next/link'
 import { useRouter } from 'next/router'
 
 import { getButtonAppearance } from 'utils/button'
-import { mediaPropTypes, linkPropTypes, buttonLinkPropTypes } from 'utils/types'
 import MobileNavMenu from './mobile-nav-menu'
 import ButtonLink from './button-link'
 import NextImage from './image'
 import CustomLink from './custom-link'
 import LocaleSwitch from '../locale-switch'
 
-const Navbar = ({ navbar, pageContext }) => {
+interface INavbar {
+  navbar: {
+    id: number
+    links: ILink[]
+    button: IButton
+    logo: IMedia
+  }
+  pageContext: {
+    locale: string
+    locales: string[]
+    defaultLocale: string
+    slug: string
+    localizations: []
+    localizedPaths: [
+      {
+        locale: string
+        href: string
+      }
+    ]
+  }
+}
+
+const Navbar = ({ navbar, pageContext }: INavbar) => {
   const router = useRouter()
   const [mobileMenuIsShown, setMobileMenuIsShown] = useState(false)
 
@@ -83,6 +104,7 @@ const Navbar = ({ navbar, pageContext }) => {
               </div>
             )}
             {/* Locale Switch Desktop */}
+
             {pageContext.localizedPaths && (
               <div className="hidden md:block">
                 <LocaleSwitch pageContext={pageContext} />
@@ -101,18 +123,6 @@ const Navbar = ({ navbar, pageContext }) => {
       )}
     </>
   )
-}
-
-Navbar.propTypes = {
-  navbar: PropTypes.shape({
-    logo: PropTypes.shape({
-      image: mediaPropTypes,
-      url: PropTypes.string,
-    }),
-    links: PropTypes.arrayOf(linkPropTypes),
-    button: buttonLinkPropTypes,
-  }),
-  initialLocale: PropTypes.string,
 }
 
 export default Navbar

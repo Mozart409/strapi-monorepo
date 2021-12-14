@@ -1,14 +1,10 @@
 import React, { Fragment, ReactElement, useEffect, useState } from 'react'
 import { Listbox, Transition } from '@headlessui/react'
 import { CheckIcon, SelectorIcon } from '@heroicons/react/solid'
-import cx from 'classnames'
+import classNames from 'classnames'
 import { useQuery } from 'react-query'
 import MarkdownRender from 'utils/MarkdownRender'
 import { getDynamicRT } from 'utils/api'
-
-function classNames(...classes) {
-  return classes.filter(Boolean).join(' ')
-}
 
 type Props = {
   data: {

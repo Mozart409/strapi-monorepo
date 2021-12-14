@@ -2,7 +2,7 @@
 import Link, { LinkProps } from 'next/link'
 import ReactMarkdown from 'react-markdown'
 import slugify from 'slugify'
-import cx from 'classnames'
+import classNames from 'classnames'
 
 import * as React from 'react'
 

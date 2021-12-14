@@ -3,12 +3,48 @@ import Navbar from './elements/navbar'
 import Footer from './elements/footer'
 import NotificationBanner from './elements/notification-banner'
 
+interface IColumItem {
+  id: 1
+  title: 'Product'
+  links: IColumItemLink[]
+}
+
+interface IColumItemLink {
+  id: number
+  url: string
+  newTab: boolean
+  text: string
+  title: string
+}
+
 interface Props {
   children: JSX.Element | JSX.Element[]
   global: {
-    navbar: unknown
-    footer: unknown
-    notificationBanner: unknown
+    navbar: {
+      id: number
+      links: ILink
+      button: {
+        id: number
+        url: string
+        newTab: boolean
+        text: string
+        type: string
+      }
+      logo: IMedia
+    }
+
+    footer: {
+      logo: IMedia
+      favicon: IMedia
+      id: number
+      smallText: string
+      columns: IColumItem[]
+    }
+    notificationBanner: {
+      id: number
+      text: string
+      type: 'info' | 'warning' | 'alert'
+    }
   }
   pageContext
 }

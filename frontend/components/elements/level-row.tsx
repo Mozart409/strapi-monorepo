@@ -1,4 +1,4 @@
-import cx from 'classnames'
+import classNames from 'classnames'
 import MarkdownRender from 'utils/MarkdownRender'
 const LevelRow = ({ data: { id, title, titleColor, content } }) => {
   return (
@@ -7,7 +7,7 @@ const LevelRow = ({ data: { id, title, titleColor, content } }) => {
         <ul className="py-4 mx-auto max-w-prose">
           <li className="list-inside align-baseline list-check">
             <span
-              className={cx(
+              className={classNames(
                 'font-bold text-transparent bg-clip-text bg-gradient-to-r text-2xl text-left',
                 {
                   'from-yellow-800 to-yellow-500': titleColor === 'orange',

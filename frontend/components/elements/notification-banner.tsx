@@ -7,7 +7,7 @@ interface IProps {
   closeSelf: MouseEventHandler<HTMLButtonElement>
 }
 
-const NotificationBanner = ({ data: { text, type }, closeSelf }: IProps) => {
+const NotificationBanner = ({ data, closeSelf }: IProps) => {
   return (
     <div
       className={classNames(
@@ -15,15 +15,15 @@ const NotificationBanner = ({ data: { text, type }, closeSelf }: IProps) => {
         'text-white px-2 py-2',
         {
           // Apply theme based on notification type
-          'bg-primary-600': type === 'info',
-          'bg-orange-600': type === 'warning',
-          'bg-red-600': type === 'alert',
+          'bg-primary-600': data.type === 'info',
+          'bg-orange-600': data.type === 'warning',
+          'bg-red-600': data.type === 'alert',
         }
       )}
     >
       <div className="container flex flex-row justify-between items-center">
         <div className="flex-1 rich-text-banner">
-          <Markdown>{text}</Markdown>
+          <Markdown>{data.text}</Markdown>
         </div>
         <button onClick={closeSelf} className="flex-shrink-0 py-1 px-1">
           <div className="w-auto h-6 text-white">

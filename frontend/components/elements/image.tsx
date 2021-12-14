@@ -1,7 +1,5 @@
 import { getStrapiMedia } from 'utils/media'
 import Image from 'next/image'
-import PropTypes from 'prop-types'
-import { mediaPropTypes } from 'utils/types'
 
 interface CustomImageProps {
   media?: IMedia
@@ -10,8 +8,24 @@ interface CustomImageProps {
   height?: string | number
 }
 
-const NextImage = ({ media, className, ...props }) => {
-  const { url, alternativeText } = media
+const NextImage = ({ media, ...props }: CustomImageProps) => {
+  const fullUrl = getStrapiMedia(media?.url)
+
+  return (
+    <div>
+      <Image
+        src={fullUrl}
+        alt={media?.alternativeText || ''}
+        title={media?.caption || ''}
+        layout="intrinsic"
+        className={props.className}
+        width={props.width || media?.width}
+        height={props.height || media?.height}
+      />
+    </div>
+  )
+}
+/*   const { url, alternativeText } = media
 
   const loader = ({ src }) => {
     return getStrapiMedia(src)
@@ -36,6 +50,6 @@ const NextImage = ({ media, className, ...props }) => {
       alt={alternativeText || ''}
     />
   )
-}
+} */
 
 export default NextImage

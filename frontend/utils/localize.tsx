@@ -1,4 +1,6 @@
 import { fetchAPI } from './api'
+
+interface ILocalize {}
 export async function getLocalizedPage(targetLocale, pageContext) {
   const localization = pageContext.localizations.find(
     (localization) => localization.locale === targetLocale

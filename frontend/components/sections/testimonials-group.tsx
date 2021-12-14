@@ -2,12 +2,10 @@ import classNames from 'classnames'
 import { useState } from 'react'
 import NextImage from '../elements/image'
 import CustomLink from '../elements/custom-link'
-
 const TestimonialsGroup = ({ data }) => {
   // Only show one testimonial at a time
   const [selectedTestimonialIndex, setSelectedTestimonialIndex] = useState(0)
   const selectedTestimonial = data.testimonials[selectedTestimonialIndex]
-
   return (
     <section className="pt-12 pb-16 text-lg text-center bg-gray-200">
       <h2 className="mb-4 title">{data.title}</h2>
@@ -17,7 +15,7 @@ const TestimonialsGroup = ({ data }) => {
           {data.link.text}
         </span>
       </CustomLink>
-      {/* Current testimonial card */}
+
       <div className="flex flex-col mx-auto mt-10 w-8/12 max-w-5xl text-left bg-white shadow-md sm:flex-row sm:w-8/12 sm:shadow-xl">
         <div className="flex-shrink-0 w-full md:w-4/12">
           <NextImage media={selectedTestimonial.picture} />
@@ -53,7 +51,7 @@ const TestimonialsGroup = ({ data }) => {
           </CustomLink>
         </div>
       </div>
-      {/* Change selected testimonial (only if there is more than one) */}
+
       {data.testimonials.length > 1 && (
         <div className="flex flex-row gap-4 justify-center mt-10">
           {data.testimonials.map((testimonial, index) => (
@@ -72,7 +70,7 @@ const TestimonialsGroup = ({ data }) => {
           ))}
         </div>
       )}
-      {/* Logos list */}
+
       <div className="flex flex-row flex-wrap gap-6 justify-center items-center px-6 mt-10 sm:gap-20 sm:px-0">
         {data.logos.map((logo) => (
           <NextImage key={logo.id} width="120" height="33" media={logo.logo} />
@@ -81,5 +79,4 @@ const TestimonialsGroup = ({ data }) => {
     </section>
   )
 }
-
 export default TestimonialsGroup

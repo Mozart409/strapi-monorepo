@@ -1,6 +1,6 @@
 import { useEffect, useState, useRef } from 'react'
 import { useRouter } from 'next/router'
-import PropTypes from 'prop-types'
+
 import Link from 'next/link'
 
 import Cookies from 'js-cookie'
@@ -90,13 +90,7 @@ const LocaleSwitch = ({ pageContext }) => {
         {pageContext.localizedPaths &&
           pageContext.localizedPaths.map(({ href, locale }) => {
             return (
-              <Link
-                href={href}
-                key={locale}
-                locale={locale}
-                role="option"
-                passHref
-              >
+              <Link href={href} key={locale} locale={locale} passHref>
                 <p
                   onClick={() => handleLocaleChange(locale)}
                   className="p-2 text-center capitalize rounded-md cursor-pointer hover:bg-primary-50 hover:text-primary-600"
@@ -109,10 +103,6 @@ const LocaleSwitch = ({ pageContext }) => {
       </div>
     </div>
   )
-}
-
-LocaleSwitch.propTypes = {
-  initialLocale: PropTypes.string,
 }
 
 export default LocaleSwitch

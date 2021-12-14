@@ -1,4 +1,4 @@
-import PropTypes from 'prop-types'
+
 import { useLockBodyScroll } from 'utils/hooks'
 import { getButtonAppearance } from 'utils/button'
 import ButtonLink from './button-link'

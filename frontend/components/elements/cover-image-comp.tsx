@@ -1,6 +1,6 @@
 import { ReactElement } from 'react'
 import Image from 'next/image'
-import cx from 'classnames'
+import classNames from 'classnames'
 
 interface ImageItem {
   fullUrl: string
@@ -21,7 +21,7 @@ export default function CoverImageComp({
 }: ImageItem): ReactElement {
   return (
     <div
-      className={cx('block container mx-auto ', {
+      className={classNames('block container mx-auto ', {
         'border-b-8 border-canary-primary-500': image_border === true,
       })}
     >
