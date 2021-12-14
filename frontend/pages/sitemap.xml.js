@@ -1,6 +1,8 @@
 import React from 'react'
+import { fetchAPI } from 'utils/api'
 
-// const EXTERNAL_DATA_URL = 'https://ibexion.bike'
+const EXTERNAL_DATA_URL = process.env.NEXT_PUBLIC_FRONTEND_DOMAIN
+const CMS_URL = process.env.NEXT_PUBLIC_STRAPI_API_URL
 
 const createSitemap = (pages) => `<?xml version="1.0" encoding="UTF-8"?>
     <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
@@ -16,12 +18,12 @@ const createSitemap = (pages) => `<?xml version="1.0" encoding="UTF-8"?>
                    
     </urlset>
     `
+
 class Sitemap extends React.Component {
   static async getInitialProps({ res }) {
-    /* const request = await fetch(
-      'https://docker-strapi-ibexion.3iondl2h16bmc.eu-central-1.cs.amazonlightsail.com/pages?status=published'
-    )
-    const pages = await request.json() */
+    const request = await fetch(CMS_URL + '/pages')
+
+    const pages = await request.json()
 
     res.setHeader('Content-Type', 'text/xml')
     res.write(createSitemap(pages))
@@ -30,21 +32,3 @@ class Sitemap extends React.Component {
 }
 
 export default Sitemap
-
-{
-  /* <url>
-<loc>${`${EXTERNAL_DATA_URL}/impressum`}</loc>
-</url>
-<url>
-<loc>${`${EXTERNAL_DATA_URL}/datenschutz`}</loc>
-</url>
-<url>
-<loc>${`${EXTERNAL_DATA_URL}/kontakt`}</loc>
-</url>
-<url>
-<loc>${`${EXTERNAL_DATA_URL}/seminar-reservierung`}</loc>
-</url>
-<url>
-<loc>${`${EXTERNAL_DATA_URL}`}</loc>
-</url> */
-}
