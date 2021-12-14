@@ -5,7 +5,7 @@ import NotificationBanner from './elements/notification-banner'
 
 interface IColumItem {
   id: 1
-  title: 'Product'
+  title: string
   links: IColumItemLink[]
 }
 
@@ -22,7 +22,7 @@ interface Props {
   global: {
     navbar: {
       id: number
-      links: ILink
+      links: ILink[]
       button: {
         id: number
         url: string
@@ -31,6 +31,7 @@ interface Props {
         type: string
       }
       logo: IMedia
+      mobileLogo: IMedia
     }
 
     footer: {
@@ -49,7 +50,7 @@ interface Props {
   pageContext
 }
 
-const Layout: React.FC = ({ children, global, pageContext }: Props) => {
+const Layout = ({ children, global, pageContext }: Props) => {
   const { navbar, footer, notificationBanner } = global
 
   const [bannerIsShown, setBannerIsShown] = useState(true)

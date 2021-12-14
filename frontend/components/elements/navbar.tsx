@@ -14,8 +14,15 @@ interface INavbar {
   navbar: {
     id: number
     links: ILink[]
-    button: IButton
+    button: {
+      id: number
+      url: string
+      newTab: boolean
+      text: string
+      type: string
+    }
     logo: IMedia
+    mobileLogo: IMedia
   }
   pageContext: {
     locale: string

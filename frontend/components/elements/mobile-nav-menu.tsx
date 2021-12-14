@@ -1,4 +1,3 @@
-
 import { useLockBodyScroll } from 'utils/hooks'
 import { getButtonAppearance } from 'utils/button'
 import ButtonLink from './button-link'
@@ -6,11 +5,18 @@ import CustomLink from './custom-link'
 import CustomImage from './custom-image'
 
 interface MobileNavMenuProps {
-  navbar?: {
-    logo?: IMedia
-    mobileLogo?: IMedia
-    links?: ILink[]
-    button?: IButton
+  navbar: {
+    id: number
+    links: ILink[]
+    button: {
+      id: number
+      url: string
+      newTab: boolean
+      text: string
+      type: string
+    }
+    logo: IMedia
+    mobileLogo: IMedia
   }
   closeSelf?(...args: unknown[]): unknown
 }

@@ -13,10 +13,10 @@ const LocaleSwitch = ({ pageContext }) => {
   const isMounted = useRef(false)
   const select = useRef()
   const router = useRouter()
-  const [locale, setLocale] = useState()
+  const [locale, setLocale] = useState('')
   const [showing, setShowing] = useState(false)
 
-  const handleLocaleChange = async (selectedLocale) => {
+  const handleLocaleChange = async (selectedLocale: string) => {
     // Persist the user's language preference
     // https://nextjs.org/docs/advanced-features/i18n-routing#leveraging-the-next_locale-cookie
     Cookies.set('NEXT_LOCALE', selectedLocale)
@@ -44,6 +44,7 @@ const LocaleSwitch = ({ pageContext }) => {
         router.push(
           `${localizePath({ ...pageContext, ...localePage })}`,
           `${localizePath({ ...pageContext, ...localePage })}`,
+          //@ts-ignore
           { locale: localePage.locale }
         )
       }

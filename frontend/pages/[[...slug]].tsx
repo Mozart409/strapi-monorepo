@@ -10,6 +10,51 @@ import { getLocalizedPaths } from 'utils/localize'
 // optional catch all routes feature. See the related docs:
 // https://nextjs.org/docs/routing/dynamic-routes#optional-catch-all-routes
 
+interface IColumItem {
+  id: 1
+  title: string
+  links: IColumItemLink[]
+}
+
+interface IColumItemLink {
+  id: number
+  url: string
+  newTab: boolean
+  text: string
+  title: string
+}
+
+interface IDynamicPage {
+  global: {
+    navbar: {
+      id: number
+      links: ILink[]
+      button: {
+        id: number
+        url: string
+        newTab: boolean
+        text: string
+        type: string
+      }
+      logo: IMedia
+      mobileLogo: IMedia
+    }
+
+    footer: {
+      logo: IMedia
+      favicon: IMedia
+      id: number
+      smallText: string
+      columns: IColumItem[]
+    }
+    notificationBanner: {
+      id: number
+      text: string
+      type: 'info' | 'warning' | 'alert'
+    }
+  }
+}
+
 const DynamicPage = ({ sections, metadata, preview, global, pageContext }) => {
   const router = useRouter()
 

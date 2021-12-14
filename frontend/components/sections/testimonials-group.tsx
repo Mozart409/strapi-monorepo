@@ -42,6 +42,8 @@ const TestimonialsGroup = ({ data }) => {
               url: selectedTestimonial.link,
               text: '',
               newTab: false,
+              alt: selectedTestimonial.text,
+              title: selectedTestimonial.text,
               id: 0,
             }}
           >
