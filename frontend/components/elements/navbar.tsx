@@ -1,5 +1,6 @@
-import { useState } from 'react'
-
+import { Fragment, useState } from 'react'
+import { Menu, Transition } from '@headlessui/react'
+import { ChevronDownIcon } from '@heroicons/react/solid'
 import Link from 'next/link'
 import { useRouter } from 'next/router'
 
@@ -9,11 +10,25 @@ import ButtonLink from './button-link'
 import NextImage from './image'
 import CustomLink from './custom-link'
 import LocaleSwitch from '../locale-switch'
+import classNames from 'classnames'
 
 interface INavbar {
   navbar: {
     id: number
-    links: ILink[]
+    links: {
+      id: number
+      url: string
+      title: string
+      text: string
+      newTab: boolean
+      links: {
+        id: number
+        url: string
+        title: string
+        text: string
+        newTab: boolean
+      }[]
+    }[]
     button: {
       id: number
       url: string
@@ -56,20 +71,70 @@ const Navbar = ({ navbar, pageContext }: INavbar) => {
               </a>
             </Link>
             {/* List of links on desktop */}
-            <ul className="hidden flex-row gap-4 items-baseline ml-10 list-none md:flex">
+            {/* <ul className="hidden flex-row gap-4 items-baseline ml-10 list-none md:flex">
               {navbar.links.map((navLink) => (
                 <li key={navLink.id}>
-                  {/* <CustomLink link={navLink} locale={router.locale}>
-                    <div className="py-1 px-2 hover:text-gray-900">
-                      {navLink.text}
-                    </div>
-                  </CustomLink> */}
                   <CustomLink link={navLink}>
                     <div className="py-1 px-2 hover:text-gray-900">
                       {navLink.text}
                     </div>
                   </CustomLink>
                 </li>
+              ))}
+            </ul> */}
+
+            <ul className="hidden flex-row gap-4 items-baseline ml-10 list-none md:flex">
+              {navbar.links.map((menuLink) => (
+                <Menu
+                  key={menuLink.id}
+                  as="div"
+                  className="relative inline-block text-left"
+                >
+                  <div>
+                    <Menu.Button className="inline-flex justify-center w-full rounded-md border border-gray-300 shadow-sm px-4 py-2 bg-white text-sm font-medium text-gray-700 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-100 focus:ring-primary-500">
+                      <Link href={menuLink.url} passHref>
+                        <a title={menuLink.title}>{menuLink.text}</a>
+                      </Link>
+                      <ChevronDownIcon
+                        className="-mr-1 ml-2 h-5 w-5"
+                        aria-hidden="true"
+                      />
+                    </Menu.Button>
+                  </div>
+
+                  <Transition
+                    as={Fragment}
+                    enter="transition ease-out duration-100"
+                    enterFrom="transform opacity-0 scale-95"
+                    enterTo="transform opacity-100 scale-100"
+                    leave="transition ease-in duration-75"
+                    leaveFrom="transform opacity-100 scale-100"
+                    leaveTo="transform opacity-0 scale-95"
+                  >
+                    <Menu.Items className="origin-top-right absolute right-0 mt-2 w-56 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 focus:outline-none">
+                      <div className="py-1">
+                        {menuLink.links.map((item) => (
+                          <Menu.Item key={item.id}>
+                            {({ active }) => (
+                              <Link href={item.url}>
+                                <a
+                                  className={classNames(
+                                    active
+                                      ? 'bg-gray-100 text-gray-900'
+                                      : 'text-gray-700',
+                                    'block px-4 py-2 text-sm hover:bg-gray-100'
+                                  )}
+                                >
+                                  {item.text}
+                                </a>
+                              </Link>
+                            )}
+                          </Menu.Item>
+                        ))}
+                      </div>
+                    </Menu.Items>
+                  </Transition>
+                </Menu>
               ))}
             </ul>
           </div>

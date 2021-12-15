@@ -22,7 +22,20 @@ interface Props {
   global: {
     navbar: {
       id: number
-      links: ILink[]
+      links: {
+        id: number
+        url: string
+        title: string
+        text: string
+        newTab: boolean
+        links: {
+          id: number
+          url: string
+          title: string
+          text: string
+          newTab: boolean
+        }[]
+      }[]
       button: {
         id: number
         url: string

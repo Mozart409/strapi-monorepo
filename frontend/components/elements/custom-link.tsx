@@ -12,7 +12,9 @@ const CustomLink = ({ link, children }: IProps) => {
       // For internal links, use the Next.js Link component
       return (
         <Link href="/[[...slug]]" as={link?.url}>
-          <a title={link?.title}>{children}</a>
+          <a className="text-gray-700 hover:bg-gray-200" title={link?.title}>
+            {children}
+          </a>
         </Link>
       )
     }

@@ -18,7 +18,6 @@ export declare global {
     height?: number
   }
   interface ILink {
-    alt: string
     url: string
     id: string | number
     text: string

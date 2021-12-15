@@ -10,7 +10,7 @@
     "links": {
       "type": "component",
       "repeatable": true,
-      "component": "links.link"
+      "component": "elements.menu-sections"
     },
     "button": {
       "type": "component",
@@ -20,9 +20,7 @@
     "logo": {
       "model": "file",
       "via": "related",
-      "allowedTypes": [
-        "images"
-      ],
+      "allowedTypes": ["images"],
       "plugin": "upload",
       "required": true
     }
