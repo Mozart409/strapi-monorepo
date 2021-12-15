@@ -7,7 +7,20 @@ import CustomImage from './custom-image'
 interface MobileNavMenuProps {
   navbar: {
     id: number
-    links: ILink[]
+    links: {
+      id: number
+      url: string
+      title: string
+      text: string
+      newTab: boolean
+      links: {
+        id: number
+        url: string
+        title: string
+        text: string
+        newTab: boolean
+      }[]
+    }[]
     button: {
       id: number
       url: string
@@ -72,28 +85,40 @@ const MobileNavMenu = ({ navbar, closeSelf }: MobileNavMenuProps) => {
           <ul className="flex flex-col gap-6 items-baseline mb-10 text-xl list-none">
             {navbar.links.map((navLink) => (
               <li onClick={closeSelf} key={navLink.id} className="block w-full">
-                <CustomLink link={navLink}>
-                  <div className="flex flex-row justify-between items-center py-6 hover:text-gray-900">
-                    <span>{navLink?.text}</span>
+                <div className=" space-y-1">
+                  <CustomLink link={navLink}>
+                    <div className="flex flex-row justify-between items-center pb-2 hover:text-gray-900 font-bold">
+                      <span>{navLink?.text}</span>
 
-                    <div className="w-auto h-8">
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        className="w-6 h-6"
-                        fill="none"
-                        viewBox="0 0 24 24"
-                        stroke="currentColor"
-                      >
-                        <path
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                          strokeWidth={2}
-                          d="M9 5l7 7-7 7"
-                        />
-                      </svg>
+                      <div className="w-auto h-8">
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          className="w-8 h-8"
+                          fill="none"
+                          viewBox="0 0 24 24"
+                          stroke="currentColor"
+                        >
+                          <path
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            strokeWidth={2}
+                            d="M9 5l7 7-7 7"
+                          />
+                        </svg>
+                      </div>
                     </div>
+                  </CustomLink>
+
+                  <div className="ml-4">
+                    {navLink.links.map((item) => (
+                      <div key={item.id}>
+                        <CustomLink link={item}>
+                          <span>{item.text}</span>
+                        </CustomLink>
+                      </div>
+                    ))}
                   </div>
-                </CustomLink>
+                </div>
               </li>
             ))}
           </ul>
