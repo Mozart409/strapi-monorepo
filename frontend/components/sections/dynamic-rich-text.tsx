@@ -68,12 +68,13 @@ function DynamicRichText({ data }: Props): ReactElement {
     console.log('END handleChange')
   }
 
-  return (
-    <div className="container">
-      {/* <button className="m-2 bg-primary-500 text-white" onClick={handleChange}>
+  if (dynamicData)
+    return (
+      <div className="container py-16 px-4 lg:px-8 lg:py-24">
+        {/* <button className="m-2 bg-primary-500 text-white" onClick={handleChange}>
         Test DataLayer
       </button> */}
-      {dynamicData ? (
+
         <div className="">
           <MarkdownRender>{data.content}</MarkdownRender>
           <br />
@@ -161,81 +162,6 @@ function DynamicRichText({ data }: Props): ReactElement {
               )}
             </Listbox>
           </div>
-          {/*  <div className="relative lg:grid lg:grid-cols-10 lg:col-span-10 lg:col-start-3 lg:row-start-1 lg:items-center lg:rounded-3xl">
-            <div
-              className="hidden overflow-hidden absolute inset-0 rounded-3xl lg:block"
-              aria-hidden="true"
-            >
-              <svg
-                className="absolute bottom-full left-full transform -translate-x-2/3 translate-y-1/3 xl:top-0 xl:bottom-auto xl:translate-y-0"
-                width={404}
-                height={384}
-                fill="none"
-                viewBox="0 0 404 384"
-                aria-hidden="true"
-              >
-                <defs>
-                  <pattern
-                    id="64e643ad-2176-4f86-b3d7-f2c5da3b6a6d"
-                    x={0}
-                    y={0}
-                    width={20}
-                    height={20}
-                    patternUnits="userSpaceOnUse"
-                  >
-                    <rect
-                      x={0}
-                      y={0}
-                      width={4}
-                      height={4}
-                      className="text-primary-500"
-                      fill="currentColor"
-                    />
-                  </pattern>
-                </defs>
-                <rect
-                  width={404}
-                  height={384}
-                  fill="url(#64e643ad-2176-4f86-b3d7-f2c5da3b6a6d)"
-                />
-              </svg>
-              <svg
-                className="absolute top-full transform -translate-x-1/3 -translate-y-1/3 xl:-translate-y-1/2"
-                width={404}
-                height={384}
-                fill="none"
-                viewBox="0 0 404 384"
-                aria-hidden="true"
-              >
-                <defs>
-                  <pattern
-                    id="64e643ad-2176-4f86-b3d7-f2c5da3b6a6d"
-                    x={0}
-                    y={0}
-                    width={20}
-                    height={20}
-                    patternUnits="userSpaceOnUse"
-                  >
-                    <rect
-                      x={0}
-                      y={0}
-                      width={4}
-                      height={4}
-                      className="text-primary-500"
-                      fill="currentColor"
-                    />
-                  </pattern>
-                </defs>
-                <rect
-                  width={404}
-                  height={384}
-                  fill="url(#64e643ad-2176-4f86-b3d7-f2c5da3b6a6d)"
-                />
-              </svg>
-            </div>
-          </div>
-         */}
-
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="max-w-3xl mx-auto">
               <div className="p-3 my-8 bg-gray-200 rounded">
@@ -244,9 +170,10 @@ function DynamicRichText({ data }: Props): ReactElement {
             </div>
           </div>
         </div>
-      ) : null}
-    </div>
-  )
+      </div>
+    )
+
+  return null
 }
 
 export default DynamicRichText
