@@ -5,33 +5,34 @@ import classNames from 'classnames'
 import { useQuery } from 'react-query'
 import MarkdownRender from 'utils/MarkdownRender'
 import { getDynamicRT } from 'utils/api'
+import { useRouter } from 'next/router'
+import slugify from 'slugify'
 
 type Props = {
   data: {
     __component: string
     id: number
     content: string
-    RichTextSelektor: [
-      {
+    RichTextSelektor: {
+      id: number
+      label: string
+      dynamic_rich_text: {
         id: number
-        label: string
-        dynamic_rich_text: {
-          id: number
-          shortName: string
-          content: string
-          slug: string
-          published_at: string
-          created_at: string
-          updated_at: string
-        }
+        shortName: string
+        content: string
+        slug: string
+        published_at: string
+        created_at: string
+        updated_at: string
       }
-    ]
+    }[]
   }
 }
 
 function DynamicRichText({ data }: Props): ReactElement {
   //
 
+  const router = useRouter()
   const [selected, setSelected] = useState({
     slug: data?.RichTextSelektor[0].dynamic_rich_text?.slug,
     shortName: data?.RichTextSelektor[0].dynamic_rich_text?.shortName,
@@ -68,6 +69,18 @@ function DynamicRichText({ data }: Props): ReactElement {
     console.log('END handleChange')
   }
 
+  useEffect(() => {
+    if (router.query.dyn) {
+      const shortName = router.query.dyn
+      const slug: string = slugify(router.query.dyn as string, {
+        locale: 'de',
+        lower: true,
+      })
+      //@ts-ignore
+      setSelected({ slug, shortName })
+    }
+  }, [router.query.dyn])
+
   if (dynamicData)
     return (
       <div className="container py-16 px-4 lg:px-8 lg:py-24">
@@ -75,6 +88,7 @@ function DynamicRichText({ data }: Props): ReactElement {
         Test DataLayer
       </button> */}
 
+        {console.log(router)}
         <div className="">
           <MarkdownRender>{data.content}</MarkdownRender>
           <br />

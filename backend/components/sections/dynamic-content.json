@@ -13,7 +13,8 @@
     "RichTextSelektor": {
       "type": "component",
       "repeatable": true,
-      "component": "elements.page-selector"
+      "component": "elements.page-selector",
+      "required": true
     }
   }
 }

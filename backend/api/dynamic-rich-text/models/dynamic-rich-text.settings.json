@@ -10,6 +10,7 @@
     "timestamps": true,
     "draftAndPublish": true
   },
+  "pluginOptions": {},
   "attributes": {
     "shortName": {
       "type": "string",

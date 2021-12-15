@@ -9,7 +9,8 @@
   "attributes": {
     "label": {
       "type": "string",
-      "required": false
+      "required": true,
+      "unique": true
     },
     "dynamic_rich_text": {
       "model": "dynamic-rich-text"
