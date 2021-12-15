@@ -1,6 +1,10 @@
 import CustomButton from '@/components/elements/custom-button'
 import Link from 'next/link'
+import { useEffect } from 'react'
 export default function Custom404() {
+  useEffect(() => {
+    window.dataLayer.push({ event: '404 page hit' })
+  }, [])
   return (
     <div className="my-auto">
       <div className="py-16 px-4 min-h-full bg-white sm:py-24 sm:px-6 md:grid md:place-items-center lg:px-8">
