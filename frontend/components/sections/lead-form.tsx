@@ -13,7 +13,7 @@ const CheckboxComponent = ({ data }) => {
           htmlFor="checkbox"
           className="block mt-2 text-sm font-medium text-left text-gray-700"
         >
-          Auswahl
+          Check
         </label>
         <Field
           name="checkbox"
@@ -27,7 +27,7 @@ const CheckboxComponent = ({ data }) => {
           ))}
         </Field>
         <ErrorMessage
-          render={(msg) => <p className="error-style">{msg}</p>}
+          render={(msg) => <p className="error-style capitalize">{msg}</p>}
           name="checkbox"
         />
       </div>
@@ -118,14 +118,16 @@ const LeadForm = ({ data }) => {
                     placeholder={data.namePlaceholder}
                   />
                   <ErrorMessage
-                    render={(msg) => <p className="error-style">{msg}</p>}
+                    render={(msg) => (
+                      <p className="error-style capitalize">{msg}</p>
+                    )}
                     name="name"
                   />
                   <label
                     htmlFor="email"
                     className="block mt-2 text-sm font-medium text-left text-gray-700"
                   >
-                    E-Mail (notwendig)
+                    E-Mail (*)
                   </label>
                   <Field
                     className="block py-3 px-4 w-full rounded-md border-gray-300 shadow-sm focus:ring-primary-500 focus:border-primary-500"
@@ -134,14 +136,16 @@ const LeadForm = ({ data }) => {
                     placeholder={data.emailPlaceholder}
                   />
                   <ErrorMessage
-                    render={(msg) => <p className="error-style">{msg}</p>}
+                    render={(msg) => (
+                      <p className="error-style capitalize">{msg}</p>
+                    )}
                     name="email"
                   />
                   <label
                     htmlFor="tel"
                     className="block mt-2 text-sm font-medium text-left text-gray-700"
                   >
-                    Telefon
+                    Phone
                   </label>
                   <Field
                     className="block py-3 px-4 w-full rounded-md border-gray-300 shadow-sm focus:ring-primary-500 focus:border-primary-500"
@@ -150,14 +154,16 @@ const LeadForm = ({ data }) => {
                     placeholder={data.telPlaceholder}
                   />
                   <ErrorMessage
-                    render={(msg) => <p className="error-style">{msg}</p>}
+                    render={(msg) => (
+                      <p className="error-style capitalize">{msg}</p>
+                    )}
                     name="tel"
                   />
                   <label
                     htmlFor="subject"
                     className="block mt-2 text-sm font-medium text-left text-gray-700"
                   >
-                    Betreff
+                    Subject
                   </label>
                   <Field
                     className="block py-3 px-4 w-full rounded-md border-gray-300 shadow-sm focus:ring-primary-500 focus:border-primary-500"
@@ -166,7 +172,9 @@ const LeadForm = ({ data }) => {
                     placeholder={data.subjectPlaceholder}
                   />
                   <ErrorMessage
-                    render={(msg) => <p className="error-style">{msg}</p>}
+                    render={(msg) => (
+                      <p className="error-style capitalize">{msg}</p>
+                    )}
                     name="subject"
                   />
 
@@ -176,17 +184,20 @@ const LeadForm = ({ data }) => {
                     htmlFor="message"
                     className="block mt-2 text-sm font-medium text-left text-gray-700"
                   >
-                    Nachricht (notwendig)
+                    Message (*)
                   </label>
                   <Field
                     className="block py-3 px-4 w-full rounded-md border-gray-300 shadow-sm focus:ring-primary-500 focus:border-primary-500"
                     type="text"
                     name="message"
                     as="textarea"
+                    rows="8"
                     placeholder={data.textPlaceholder}
                   />
                   <ErrorMessage
-                    render={(msg) => <p className="error-style">{msg}</p>}
+                    render={(msg) => (
+                      <p className="error-style capitalize">{msg}</p>
+                    )}
                     name="message"
                   />
                   {/*   <Button

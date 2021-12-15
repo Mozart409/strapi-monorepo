@@ -78,7 +78,7 @@ const Layout = ({ children, global, pageContext }: Props) => {
           />
         )}
         <Navbar navbar={navbar} pageContext={pageContext} />
-        <div>{children}</div>
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">{children}</div>
       </div>
       {/* Aligned to the bottom */}
       <Footer footer={footer} />

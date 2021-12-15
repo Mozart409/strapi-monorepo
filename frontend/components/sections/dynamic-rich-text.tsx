@@ -70,9 +70,9 @@ function DynamicRichText({ data }: Props): ReactElement {
 
   return (
     <div className="container">
-      <button className="m-2 bg-primary-500 text-white" onClick={handleChange}>
+      {/* <button className="m-2 bg-primary-500 text-white" onClick={handleChange}>
         Test DataLayer
-      </button>
+      </button> */}
       {dynamicData ? (
         <div className="">
           <MarkdownRender>{data.content}</MarkdownRender>
