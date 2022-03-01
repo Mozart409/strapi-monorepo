@@ -1,12 +1,12 @@
-import React, { Fragment, ReactElement, useEffect, useState } from 'react'
-import { Listbox, Transition } from '@headlessui/react'
-import { CheckIcon, SelectorIcon } from '@heroicons/react/solid'
-import classNames from 'classnames'
-import { useQuery } from 'react-query'
-import MarkdownRender from 'utils/MarkdownRender'
-import { getDynamicRT } from 'utils/api'
-import { useRouter } from 'next/router'
-import slugify from 'slugify'
+import React, { Fragment, ReactElement, useEffect, useState } from "react"
+import { Listbox, Transition } from "@headlessui/react"
+import { CheckIcon, SelectorIcon } from "@heroicons/react/solid"
+import classNames from "classnames"
+import { useQuery } from "react-query"
+import MarkdownRender from "utils/MarkdownRender"
+import { getDynamicRT } from "utils/api"
+import { useRouter } from "next/router"
+import slugify from "slugify"
 
 type Props = {
   data: {
@@ -57,14 +57,14 @@ function DynamicRichText({ data }: Props): ReactElement {
     status,
     data: dynamicData,
     error,
-  } = useQuery(['pageData', selected.slug], async () =>
+  } = useQuery(["pageData", selected.slug], async () =>
     getDynamicRT(selected.slug)
   )
 
   const handleChange = () => {
     // console.log('Start handleChange')
     window.dataLayer.push({
-      event: 'test',
+      event: "test",
     })
     // console.log('END handleChange')
   }
@@ -73,7 +73,7 @@ function DynamicRichText({ data }: Props): ReactElement {
     if (router.query.dyn) {
       const shortName = router.query.dyn
       const slug: string = slugify(router.query.dyn as string, {
-        locale: 'de',
+        locale: "de",
         lower: true,
       })
       //@ts-ignore
@@ -99,7 +99,7 @@ function DynamicRichText({ data }: Props): ReactElement {
               {({ open }) => (
                 <>
                   <Listbox.Label className="block text-sm font-medium text-gray-700">
-                    {' '}
+                    {" "}
                   </Listbox.Label>
                   <div className="relative mt-1">
                     <Listbox.Button className="relative w-full cursor-default rounded-md border border-gray-300 bg-white py-2 pr-10 pl-3 text-left shadow-sm focus:border-primary-500 focus:outline-none focus:ring-1 focus:ring-primary-500 sm:text-sm">
@@ -128,9 +128,9 @@ function DynamicRichText({ data }: Props): ReactElement {
                               className={({ active }) =>
                                 classNames(
                                   active
-                                    ? 'bg-primary-600 text-white'
-                                    : 'text-gray-900',
-                                  'relative cursor-default select-none py-2 pl-3 pr-9'
+                                    ? "bg-primary-600 text-white"
+                                    : "text-gray-900",
+                                  "relative cursor-default select-none py-2 pl-3 pr-9"
                                 )
                               }
                               value={item.dynamic_rich_text}
@@ -140,9 +140,9 @@ function DynamicRichText({ data }: Props): ReactElement {
                                   <span
                                     className={classNames(
                                       selected
-                                        ? 'font-semibold'
-                                        : 'font-normal',
-                                      'block truncate'
+                                        ? "font-semibold"
+                                        : "font-normal",
+                                      "block truncate"
                                     )}
                                   >
                                     {item.dynamic_rich_text.shortName}
@@ -152,9 +152,9 @@ function DynamicRichText({ data }: Props): ReactElement {
                                     <span
                                       className={classNames(
                                         active
-                                          ? 'text-white'
-                                          : 'text-primary-600',
-                                        'absolute inset-y-0 right-0 flex items-center pr-4'
+                                          ? "text-white"
+                                          : "text-primary-600",
+                                        "absolute inset-y-0 right-0 flex items-center pr-4"
                                       )}
                                     >
                                       <CheckIcon

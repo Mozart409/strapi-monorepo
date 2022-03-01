@@ -1,12 +1,12 @@
 /* eslint-disable react/display-name */
-import Link from 'next/link'
-import ReactMarkdown from 'react-markdown'
-import slugify from 'slugify'
+import Link from "next/link"
+import ReactMarkdown from "react-markdown"
+import slugify from "slugify"
 
 const MarkdownRender = ({ children }) => {
   const customRender = {
     a: ({ href, children, title, ...props }) => {
-      if (href.startsWith('#')) {
+      if (href.startsWith("#")) {
         return (
           <Link href={href} title={title} className="anchor">
             <a>{children}</a>
@@ -14,7 +14,7 @@ const MarkdownRender = ({ children }) => {
         )
       }
 
-      if (href.startsWith('/'))
+      if (href.startsWith("/"))
         return (
           <Link href={href} title={title} className="internal">
             <a>{children}</a>
@@ -40,7 +40,7 @@ const MarkdownRender = ({ children }) => {
           {...props}
           id={slugify(`${node?.children[0]?.value}`, {
             lower: true,
-            locale: 'de',
+            locale: "de",
           })}
         />
       )
@@ -51,7 +51,7 @@ const MarkdownRender = ({ children }) => {
           {...props}
           id={slugify(`${node?.children[0]?.value}`, {
             lower: true,
-            locale: 'de',
+            locale: "de",
           })}
         />
       )
@@ -62,7 +62,7 @@ const MarkdownRender = ({ children }) => {
           {...props}
           id={slugify(`${node?.children[0]?.value}`, {
             lower: true,
-            locale: 'de',
+            locale: "de",
           })}
         />
       )
@@ -73,7 +73,7 @@ const MarkdownRender = ({ children }) => {
           {...props}
           id={slugify(`${node?.children[0]?.value}`, {
             lower: true,
-            locale: 'de',
+            locale: "de",
           })}
         />
       )
@@ -84,7 +84,7 @@ const MarkdownRender = ({ children }) => {
           {...props}
           id={slugify(`${node?.children[0]?.value}`, {
             lower: true,
-            locale: 'de',
+            locale: "de",
           })}
         />
       )
@@ -95,7 +95,7 @@ const MarkdownRender = ({ children }) => {
           {...props}
           id={slugify(`${node?.children[0]?.value}`, {
             lower: true,
-            locale: 'de',
+            locale: "de",
           })}
         />
       )
@@ -163,7 +163,6 @@ const MarkdownRender = ({ children }) => {
               })}
             />
           )
-
         default:
           break
       }

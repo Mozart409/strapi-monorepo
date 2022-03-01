@@ -1,11 +1,11 @@
-import Error from './_error'
+import Error from "./_error"
 
-import { getPageData, fetchAPI, getGlobalData } from 'utils/api'
-import Sections from '@/components/sections'
-import Seo from '@/components/elements/seo'
-import { useRouter } from 'next/router'
-import Layout from '@/components/layout'
-import { getLocalizedPaths } from 'utils/localize'
+import { getPageData, fetchAPI, getGlobalData } from "utils/api"
+import Sections from "@/components/sections"
+import Seo from "@/components/elements/seo"
+import { useRouter } from "next/router"
+import Layout from "@/components/layout"
+import { getLocalizedPaths } from "utils/localize"
 
 // The file is called [[...slug]].js because we're using Next's
 // optional catch all routes feature. See the related docs:
@@ -51,7 +51,7 @@ interface IDynamicPage {
     notificationBanner: {
       id: number
       text: string
-      type: 'info' | 'warning' | 'alert'
+      type: "info" | "warning" | "alert"
     }
   }
 }
@@ -94,7 +94,7 @@ export async function getStaticPaths(context) {
 
   const paths = pages.map((page) => {
     // Decompose the slug that was saved in Strapi
-    const slugArray = !page.slug ? false : page.slug.split('/')
+    const slugArray = !page.slug ? false : page.slug.split("/")
 
     return {
       params: { slug: slugArray },
@@ -112,7 +112,7 @@ export async function getStaticProps(context) {
   const globalLocale = await getGlobalData(locale)
   // Fetch pages. Include drafts if preview mode is on
   const pageData = await getPageData(
-    { slug: !params.slug ? [''] : params.slug },
+    { slug: !params.slug ? [""] : params.slug },
     locale,
     preview
   )

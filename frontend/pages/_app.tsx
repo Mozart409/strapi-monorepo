@@ -1,24 +1,24 @@
-import App from 'next/app'
-import type { AppProps, AppContext } from 'next/app'
-import Head from 'next/head'
+import App from "next/app"
+import type { AppProps, AppContext } from "next/app"
+import Head from "next/head"
 
-import ErrorPage from 'next/error'
-import { useRouter } from 'next/router'
-import { DefaultSeo } from 'next-seo'
-import { getStrapiMedia } from 'utils/media'
-import { getGlobalData } from 'utils/api'
-import '@/styles/index.css'
+import ErrorPage from "next/error"
+import { useRouter } from "next/router"
+import { DefaultSeo } from "next-seo"
+import { getStrapiMedia } from "utils/media"
+import { getGlobalData } from "utils/api"
+import "@/styles/index.css"
 
-import toast, { Toaster } from 'react-hot-toast'
-import { QueryClient, QueryClientProvider } from 'react-query'
-import { ReactQueryDevtools } from 'react-query/devtools'
+import toast, { Toaster } from "react-hot-toast"
+import { QueryClient, QueryClientProvider } from "react-query"
+import { ReactQueryDevtools } from "react-query/devtools"
 
 const MyApp = ({ Component, pageProps }: AppProps) => {
   const queryClient = new QueryClient()
 
   const router = useRouter()
 
-  if (router.asPath === '/[[...slug]]') {
+  if (router.asPath === "/[[...slug]]") {
     return null
   }
 

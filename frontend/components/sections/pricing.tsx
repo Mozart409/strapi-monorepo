@@ -1,6 +1,6 @@
-import { CheckIcon } from '@heroicons/react/solid'
-import classNames from 'classnames'
-import Link from 'next/link'
+import { CheckIcon } from "@heroicons/react/solid"
+import classNames from "classnames"
+import Link from "next/link"
 
 interface Pricing {
   data: {
@@ -70,7 +70,7 @@ const Pricing = ({ data }: Pricing) => {
                   <p className="mt-8">
                     <span className="text-4xl font-extrabold text-gray-900">
                       {plan.price ? plan.price : 0}
-                    </span>{' '}
+                    </span>{" "}
                     <span className="text-base font-medium text-gray-500">
                       €
                     </span>

@@ -1,4 +1,4 @@
-import React, { Fragment, ReactElement, useEffect, useState } from 'react'
+import React, { Fragment, ReactElement, useEffect, useState } from "react"
 
 interface Props {
   data: {

@@ -1,10 +1,10 @@
-import MarkdownRender from 'utils/MarkdownRender'
-import ButtonLink from '../elements/button-link'
-import CustomImage from '../elements/image'
-import { getButtonAppearance } from 'utils/button'
-import React, { ReactElement, useState } from 'react'
-import Link from 'next/link'
-import CustomLink from './custom-link'
+import MarkdownRender from "utils/MarkdownRender"
+import ButtonLink from "../elements/button-link"
+import CustomImage from "../elements/image"
+import { getButtonAppearance } from "utils/button"
+import React, { ReactElement, useState } from "react"
+import Link from "next/link"
+import CustomLink from "./custom-link"
 
 export interface GradientHero {
   data: {
@@ -14,7 +14,7 @@ export interface GradientHero {
     blackText: string
     coloredText: string
     content: string
-    title_color: 'black' | 'orange' | 'green' | 'yellow' | 'blue' | 'red'
+    title_color: "black" | "orange" | "green" | "yellow" | "blue" | "red"
     seminarcard: Seminarcard[]
   }
 }
@@ -73,8 +73,8 @@ const SingleCard = ({
       <Link href={url}>
         <a
           // Change target and rel attributes is newTab is turned on
-          target={newTab ? '_blank' : '_self'}
-          rel={newTab ? 'noopener noreferrer' : ''}
+          target={newTab ? "_blank" : "_self"}
+          rel={newTab ? "noopener noreferrer" : ""}
           title={tilte}
         >
           <div className="relative flex-shrink-0">
@@ -122,7 +122,7 @@ function GradientHero({ data }: GradientHero): ReactElement {
             </div>
             <div className="relative mx-auto max-w-7xl">
               <div className="pt-8 text-center">
-                <MarkdownRender>{data.content}</MarkdownRender>
+                <MarkdownRender center={true}>{data.content}</MarkdownRender>
               </div>
 
               <div className="mx-auto mt-12 grid max-w-lg grid-cols-1 gap-3 lg:max-w-none lg:grid-cols-1">

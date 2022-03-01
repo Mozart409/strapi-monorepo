@@ -63,7 +63,8 @@
         "sections.dangerous-html",
         "sections.seminar-group",
         "sections.gradient-hero",
-        "sections.heading"
+        "sections.heading",
+        "links.button-link"
       ],
       "pluginOptions": {
         "i18n": {

@@ -1,9 +1,9 @@
-import Link from 'next/link'
-import React from 'react'
+import Link from "next/link"
+import React from "react"
 
 const CustomLink = ({ link, children }) => {
-  if (typeof link.url === 'string') {
-    if (link?.url?.startsWith('/')) {
+  if (typeof link.url === "string") {
+    if (link?.url?.startsWith("/")) {
       // For internal links, use the Next.js Link component
       return (
         <Link href="/[[...slug]]" as={link?.url}>
@@ -18,8 +18,8 @@ const CustomLink = ({ link, children }) => {
       <a
         href={link?.url}
         // Change target and rel attributes is newTab is turned on
-        target={link?.newTab ? '_blank' : '_self'}
-        rel={link?.newTab ? 'noopener noreferrer' : ''}
+        target={link?.newTab ? "_blank" : "_self"}
+        rel={link?.newTab ? "noopener noreferrer" : ""}
         title={link?.title}
       >
         {children}
@@ -27,8 +27,8 @@ const CustomLink = ({ link, children }) => {
     )
   }
 
-  if (typeof link?.url === 'object') {
-    if (link?.url?.url.startsWith('/')) {
+  if (typeof link?.url === "object") {
+    if (link?.url?.url.startsWith("/")) {
       // For internal links, use the Next.js Link component
       return (
         <Link href="/[[...slug]]" as={link?.url?.url}>
@@ -43,8 +43,8 @@ const CustomLink = ({ link, children }) => {
       <a
         href={link?.url?.url}
         // Change target and rel attributes is newTab is turned on
-        target={link?.newTab ? '_blank' : '_self'}
-        rel={link?.newTab ? 'noopener noreferrer' : ''}
+        target={link?.newTab ? "_blank" : "_self"}
+        rel={link?.newTab ? "noopener noreferrer" : ""}
         title={link?.title}
       >
         {children}

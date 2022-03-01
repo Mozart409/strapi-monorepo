@@ -1,12 +1,12 @@
-import { NextSeo } from 'next-seo'
-import { OpenGraph } from 'next-seo/lib/types'
-import Head from 'next/head'
-import { getStrapiMedia } from 'utils/media'
+import { NextSeo } from "next-seo"
+import { OpenGraph } from "next-seo/lib/types"
+import Head from "next/head"
+import { getStrapiMedia } from "utils/media"
 
 type SeoProps = {
   metadata?: {
     ogDescription: string
-    ogType?: 'article' | 'website'
+    ogType?: "article" | "website"
     ogArticlePublishedTime?: string
     ogArticleModifiedTime?: string
     ogArticleAuthor?: string
@@ -39,11 +39,11 @@ const Seo: React.FC<SeoProps> = ({ metadata }) => {
           description: metadata.metaDescription,
           type: metadata?.ogType,
           // IF OG type article add more metadata
-          ...(metadata?.ogType === 'article' && {
+          ...(metadata?.ogType === "article" && {
             article: {
               publishedTime: metadata?.ogArticlePublishedTime,
               modifiedTime: metadata?.ogArticleModifiedTime,
-              authors: metadata?.ogArticleAuthor.split('!'),
+              authors: metadata?.ogArticleAuthor.split("!"),
             },
           }),
           site_name: metadata?.ogSiteName,

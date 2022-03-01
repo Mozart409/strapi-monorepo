@@ -1,8 +1,8 @@
-import Markdown from 'react-markdown'
-import { getButtonAppearance } from 'utils/button'
-import MarkdownRender from 'utils/MarkdownRender'
-import ButtonLink from '../elements/button-link'
-import NextImage from '../elements/image'
+import Markdown from "react-markdown"
+import { getButtonAppearance } from "utils/button"
+import MarkdownRender from "utils/MarkdownRender"
+import ButtonLink from "../elements/button-link"
+import NextImage from "../elements/image"
 const Hero = ({ data }) => {
   return (
     <div className="container flex flex-col items-center justify-between gap-12 py-12 md:flex-row">
@@ -21,7 +21,7 @@ const Hero = ({ data }) => {
           {data.buttons.map((button) => (
             <ButtonLink
               button={button}
-              appearance={getButtonAppearance(button.type, 'light')}
+              appearance={getButtonAppearance(button.type, "light")}
               key={button.id}
             />
           ))}

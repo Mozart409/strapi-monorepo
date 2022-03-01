@@ -1,6 +1,6 @@
-import { AppContext } from 'next/app'
-import Image from 'next/image'
-import { getGlobalData } from 'utils/api'
+import { AppContext } from "next/app"
+import Image from "next/image"
+import { getGlobalData } from "utils/api"
 
 function Error({ statusCode }) {
   return (

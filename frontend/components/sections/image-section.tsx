@@ -1,6 +1,6 @@
-import * as React from 'react'
-import CustomLink from '../elements/custom-link'
-import CustomImage from '../elements/image'
+import * as React from "react"
+import CustomLink from "../elements/custom-link"
+import CustomImage from "../elements/image"
 
 interface ILinkWrapper {
   link: ILink

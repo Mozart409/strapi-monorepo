@@ -1,16 +1,16 @@
-import { Fragment, useState } from 'react'
-import { Menu, Transition } from '@headlessui/react'
-import { ChevronDownIcon } from '@heroicons/react/solid'
-import Link from 'next/link'
-import { useRouter } from 'next/router'
+import { Fragment, useState } from "react"
+import { Menu, Transition } from "@headlessui/react"
+import { ChevronDownIcon } from "@heroicons/react/solid"
+import Link from "next/link"
+import { useRouter } from "next/router"
 
-import { getButtonAppearance } from 'utils/button'
-import MobileNavMenu from './mobile-nav-menu'
-import ButtonLink from './button-link'
-import NextImage from './image'
-import CustomLink from './custom-link'
-import LocaleSwitch from '../locale-switch'
-import classNames from 'classnames'
+import { getButtonAppearance } from "utils/button"
+import MobileNavMenu from "./mobile-nav-menu"
+import ButtonLink from "./button-link"
+import NextImage from "./image"
+import CustomLink from "./custom-link"
+import LocaleSwitch from "../locale-switch"
+import classNames from "classnames"
 
 interface INavbar {
   navbar: {
@@ -119,9 +119,9 @@ const Navbar = ({ navbar, pageContext }: INavbar) => {
                                       <a
                                         className={classNames(
                                           active
-                                            ? 'bg-gray-100 text-gray-900'
-                                            : 'text-gray-700',
-                                          'block px-4 py-2 text-sm hover:bg-gray-900 hover:text-gray-100'
+                                            ? "bg-gray-100 text-gray-900"
+                                            : "text-gray-700",
+                                          "block px-4 py-2 text-sm hover:bg-gray-900 hover:text-gray-100"
                                         )}
                                       >
                                         {item.text}
@@ -179,7 +179,7 @@ const Navbar = ({ navbar, pageContext }: INavbar) => {
               <div className="hidden md:block">
                 <ButtonLink
                   button={navbar.button}
-                  appearance={getButtonAppearance(navbar.button.type, 'light')}
+                  appearance={getButtonAppearance(navbar.button.type, "light")}
                   compact
                 />
               </div>

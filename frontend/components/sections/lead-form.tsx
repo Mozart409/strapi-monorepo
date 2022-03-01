@@ -1,9 +1,9 @@
-import { useState } from 'react'
-import { fetchAPI } from 'utils/api'
-import * as yup from 'yup'
-import { Formik, Form, Field, ErrorMessage } from 'formik'
-import toast from 'react-hot-toast'
-import slugify from 'slugify'
+import { useState } from "react"
+import { fetchAPI } from "utils/api"
+import * as yup from "yup"
+import { Formik, Form, Field, ErrorMessage } from "formik"
+import toast from "react-hot-toast"
+import slugify from "slugify"
 
 const CheckboxComponent = ({ data }) => {
   if (data.length > 0)
@@ -51,7 +51,7 @@ const LeadForm = ({ data }) => {
       <h2
         id={slugify(`${data.title}`, {
           lower: true,
-          locale: 'de',
+          locale: "de",
         })}
         className="mb-10 text-3xl font-bold"
       >
@@ -61,12 +61,12 @@ const LeadForm = ({ data }) => {
         <div className="mx-auto max-w-xl">
           <Formik
             initialValues={{
-              name: '',
-              email: '',
-              tel: '',
-              subject: '',
-              message: '',
-              checkbox: '',
+              name: "",
+              email: "",
+              tel: "",
+              subject: "",
+              message: "",
+              checkbox: "",
             }}
             validationSchema={LeadSchema}
             onSubmit={async (values, { setSubmitting, setErrors }) => {
@@ -74,8 +74,8 @@ const LeadForm = ({ data }) => {
 
               try {
                 setErrors({})
-                const response = await fetchAPI('/lead-form-submissions', {
-                  method: 'POST',
+                const response = await fetchAPI("/lead-form-submissions", {
+                  method: "POST",
                   body: JSON.stringify({
                     name: values.name,
                     email: values.email,
@@ -87,19 +87,19 @@ const LeadForm = ({ data }) => {
                   }),
                 })
 
-                toast.success('Vielen Dank für Ihre Nachricht!')
-                window.dataLayer.push({ event: 'form-sent' })
+                toast.success("Vielen Dank für Ihre Nachricht!")
+                window.dataLayer.push({ event: "form-sent" })
               } catch (err) {
                 setErrors({})
                 window.dataLayer.push({
-                  event: 'form-error',
+                  event: "form-error",
                 })
                 toast.error(err.message)
               }
 
               setLoading(false)
               setSubmitting(false)
-              toast.success('Nachricht gesendet')
+              toast.success("Nachricht gesendet")
             }}
           >
             {({ errors, touched, isSubmitting }) => (

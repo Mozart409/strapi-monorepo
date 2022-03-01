@@ -1,5 +1,5 @@
-import { getStrapiMedia } from 'utils/media'
-import Image from 'next/image'
+import { getStrapiMedia } from "utils/media"
+import Image from "next/image"
 
 interface CustomImageProps {
   media?: IMedia
@@ -15,8 +15,8 @@ const NextImage = ({ media, ...props }: CustomImageProps) => {
     <div>
       <Image
         src={fullUrl}
-        alt={media?.alternativeText || ''}
-        title={media?.caption || ''}
+        alt={media?.alternativeText || ""}
+        title={media?.caption || ""}
         layout="intrinsic"
         className={props.className}
         width={props.width || media?.width}

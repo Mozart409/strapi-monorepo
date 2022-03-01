@@ -1,7 +1,7 @@
 export function getStrapiURL(path: string) {
   //  console.log(process.env.NEXT_PUBLIC_STRAPI_API_URL)
   return `${
-    process.env.NEXT_PUBLIC_STRAPI_API_URL || 'http://localhost:1337'
+    process.env.NEXT_PUBLIC_STRAPI_API_URL || "http://localhost:1337"
   }${path}`
 }
 
@@ -9,7 +9,7 @@ export function getStrapiURL(path: string) {
 export async function fetchAPI(path: string, options = {}) {
   const defaultOptions = {
     headers: {
-      'Content-Type': 'application/json',
+      "Content-Type": "application/json",
     },
   }
   const mergedOptions = {
@@ -20,7 +20,7 @@ export async function fetchAPI(path: string, options = {}) {
   const response = await fetch(requestUrl, mergedOptions)
 
   if (!response.ok) {
-    console.error('fetchAPI Error', response.url, response.statusText)
+    console.error("fetchAPI Error", response.url, response.statusText)
     throw new Error(
       `An error occured please try again ${response.status} ${response.statusText} ${response.url}`
     )
@@ -44,7 +44,7 @@ interface IPageData {
   preview: boolean
 }
 export async function getPageData(params, locale, preview = false) {
-  const slug = params.slug.join('/')
+  const slug = params.slug.join("/")
   // Find the pages that match this slug
   /* const pagesData = await fetchAPI(
     `/pages?slug=${slug}&_locale=${locale}&status=published${
@@ -67,7 +67,7 @@ export async function getPageData(params, locale, preview = false) {
 export async function getGlobalData(locale: string) {
   let language
   if (!locale) {
-    language = 'de'
+    language = "de"
   } else {
     language = locale
   }

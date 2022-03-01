@@ -1,5 +1,5 @@
-import NextImage from './image'
-import CustomLink from './custom-link'
+import NextImage from "./image"
+import CustomLink from "./custom-link"
 type FooterProps = {
   footer?: {
     logo: any

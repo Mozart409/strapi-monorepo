@@ -1,5 +1,5 @@
-import { getStrapiMedia } from 'utils/media'
-import Image from 'next/image'
+import { getStrapiMedia } from "utils/media"
+import Image from "next/image"
 
 interface CustomImageProps {
   media?: IMedia
@@ -18,7 +18,7 @@ const NextImage = ({ media, className, width, height, ...props }) => {
   // The image has a fixed width and height
   if (props.width && props.height) {
     return (
-      <Image loader={loader} src={url} alt={alternativeText || ''} {...props} />
+      <Image loader={loader} src={url} alt={alternativeText || ""} {...props} />
     )
   }
 
@@ -31,7 +31,7 @@ const NextImage = ({ media, className, width, height, ...props }) => {
       height={media.height}
       objectFit="contain"
       src={url}
-      alt={alternativeText || ''}
+      alt={alternativeText || ""}
     />
   )
 }

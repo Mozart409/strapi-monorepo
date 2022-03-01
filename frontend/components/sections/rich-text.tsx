@@ -1,4 +1,4 @@
-import MarkdownRender from 'utils/MarkdownRender'
+import MarkdownRender from "utils/MarkdownRender"
 type RichTextProps = {
   data: {
     content: string

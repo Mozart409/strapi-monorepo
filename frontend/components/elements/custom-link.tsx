@@ -1,13 +1,13 @@
-import Link from 'next/link'
-import React from 'react'
+import Link from "next/link"
+import React from "react"
 
 interface IProps {
   link: ILink
   children: JSX.Element | JSX.Element[]
 }
 const CustomLink = ({ link, children }: IProps) => {
-  if (typeof link.url === 'string') {
-    const isInternalLink = link?.url?.startsWith('/')
+  if (typeof link.url === "string") {
+    const isInternalLink = link?.url?.startsWith("/")
     if (isInternalLink) {
       // For internal links, use the Next.js Link component
       return (

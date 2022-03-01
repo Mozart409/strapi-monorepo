@@ -1,7 +1,7 @@
-import React, { useState } from 'react'
-import Navbar from './elements/navbar'
-import Footer from './elements/footer'
-import NotificationBanner from './elements/notification-banner'
+import React, { useState } from "react"
+import Navbar from "./elements/navbar"
+import Footer from "./elements/footer"
+import NotificationBanner from "./elements/notification-banner"
 
 interface IColumItem {
   id: 1
@@ -57,7 +57,7 @@ interface Props {
     notificationBanner: {
       id: number
       text: string
-      type: 'info' | 'warning' | 'alert'
+      type: "info" | "warning" | "alert"
     }
   }
   pageContext

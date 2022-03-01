@@ -1,12 +1,12 @@
-import { getStrapiMedia } from 'utils/media'
-import Image from 'next/image'
+import { getStrapiMedia } from "utils/media"
+import Image from "next/image"
 
 interface CustomImageProps {
   media?: IMedia
   className?: string
   width?: string | number
   height?: string | number
-  layout?: 'fixed' | 'intrinsic' | 'fill' | 'responsive'
+  layout?: "fixed" | "intrinsic" | "fill" | "responsive"
 }
 
 const CustomImage = ({
@@ -23,9 +23,9 @@ const CustomImage = ({
       <div>
         <Image
           src={fullUrl}
-          alt={media?.alternativeText || ''}
-          title={media?.caption || ''}
-          layout={layout || 'intrinsic'}
+          alt={media?.alternativeText || ""}
+          title={media?.caption || ""}
+          layout={layout || "intrinsic"}
           className={className}
           width={width || media?.width}
           height={height || media?.height}

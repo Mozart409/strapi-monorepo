@@ -1,8 +1,8 @@
-import classNames from 'classnames'
-import { useState } from 'react'
-import NextImage from '../elements/image'
-import CustomLink from '../elements/custom-link'
-import CustomImage from '../elements/custom-image'
+import classNames from "classnames"
+import { useState } from "react"
+import NextImage from "../elements/image"
+import CustomLink from "../elements/custom-link"
+import CustomImage from "../elements/custom-image"
 const TestimonialsGroup = ({ data }) => {
   // Only show one testimonial at a time
   const [selectedTestimonialIndex, setSelectedTestimonialIndex] = useState(0)
@@ -67,10 +67,10 @@ const TestimonialsGroup = ({ data }) => {
               onClick={() => setSelectedTestimonialIndex(index)}
               className={classNames(
                 // Common classes
-                'h-3 w-3 rounded-full',
+                "h-3 w-3 rounded-full",
                 {
-                  'bg-gray-500': index !== selectedTestimonialIndex,
-                  'bg-primary-600': index === selectedTestimonialIndex,
+                  "bg-gray-500": index !== selectedTestimonialIndex,
+                  "bg-primary-600": index === selectedTestimonialIndex,
                 }
               )}
               key={testimonial.id}

@@ -1,5 +1,5 @@
-import MarkdownRender from 'utils/MarkdownRender'
-import LevelRow from '../elements/level-row'
+import MarkdownRender from "utils/MarkdownRender"
+import LevelRow from "../elements/level-row"
 
 interface LevelModelProps {
   data: {

@@ -11,11 +11,8 @@
   },
   "devDependencies": {},
   "dependencies": {
-
     "knex": "0.95.15",
-
     "@sendgrid/mail": "^7.6.0",
-
     "pg": "^8.7.1",
     "sqlite3": "5.0.2",
     "strapi": "3.6.8",
@@ -36,7 +33,7 @@
     "name": "A Strapi developer"
   },
   "engines": {
-    "node": ">=10.16.0 <=14.x.x",
+    "node": ">=10.16.0 <=16.x.x",
     "npm": "^6.0.0"
   },
   "license": "MIT"

@@ -1,8 +1,8 @@
-import { useLockBodyScroll } from 'utils/hooks'
-import { getButtonAppearance } from 'utils/button'
-import ButtonLink from './button-link'
-import CustomLink from './custom-link'
-import CustomImage from './custom-image'
+import { useLockBodyScroll } from "utils/hooks"
+import { getButtonAppearance } from "utils/button"
+import ButtonLink from "./button-link"
+import CustomLink from "./custom-link"
+import CustomImage from "./custom-image"
 
 interface MobileNavMenuProps {
   navbar: {
@@ -125,7 +125,7 @@ const MobileNavMenu = ({ navbar, closeSelf }: MobileNavMenuProps) => {
           {navbar.button && (
             <ButtonLink
               button={navbar.button}
-              appearance={getButtonAppearance(navbar.button.type, 'light')}
+              appearance={getButtonAppearance(navbar.button.type, "light")}
             />
           )}
         </div>

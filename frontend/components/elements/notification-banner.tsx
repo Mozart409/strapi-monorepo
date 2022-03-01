@@ -1,10 +1,10 @@
-import Markdown from 'react-markdown'
-import classNames from 'classnames'
-import { MouseEventHandler } from 'react'
-import Ticker from 'react-ticker'
+import Markdown from "react-markdown"
+import classNames from "classnames"
+import { MouseEventHandler } from "react"
+import Ticker from "react-ticker"
 
 interface IProps {
-  data: { text: string; type: 'info' | 'warning' | 'alert' }
+  data: { text: string; type: "info" | "warning" | "alert" }
   closeSelf: MouseEventHandler<HTMLButtonElement>
 }
 
@@ -16,12 +16,12 @@ const NotificationBanner = ({ data, closeSelf }: IProps) => {
         <div
           className={classNames(
             // Common classes
-            'px-2 py-2 text-white',
+            "px-2 py-2 text-white",
             {
               // Apply theme based on notification type
-              'bg-blue-600': data.type === 'info',
-              'bg-orange-600': data.type === 'warning',
-              'bg-red-600': data.type === 'alert',
+              "bg-blue-600": data.type === "info",
+              "bg-orange-600": data.type === "warning",
+              "bg-red-600": data.type === "alert",
             }
           )}
         >
@@ -31,7 +31,7 @@ const NotificationBanner = ({ data, closeSelf }: IProps) => {
                 {({ index }) => (
                   <div>
                     <Markdown>{data.text}</Markdown>
-                    <p>{'         '} </p>
+                    <p>{"         "} </p>
                   </div>
                 )}
               </Ticker>

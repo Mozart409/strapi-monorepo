@@ -1,4 +1,4 @@
-import NextImage from '../elements/image'
+import NextImage from "../elements/image"
 const FeatureColumnsGroup = ({ data }) => {
   return (
     <div className="container flex flex-col gap-12 py-12 align-top lg:flex-row lg:flex-wrap">

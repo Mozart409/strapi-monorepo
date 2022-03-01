@@ -1,25 +1,25 @@
-import { useEffect, useState, useRef } from 'react'
-import { useRouter } from 'next/router'
+import { useEffect, useState, useRef } from "react"
+import { useRouter } from "next/router"
 
-import Link from 'next/link'
+import Link from "next/link"
 
-import Cookies from 'js-cookie'
-import WorldIcon from './icons/world'
+import Cookies from "js-cookie"
+import WorldIcon from "./icons/world"
 
-import { useOnClickOutside } from '../utils/hooks'
-import { getLocalizedPage, localizePath } from 'utils/localize'
+import { useOnClickOutside } from "../utils/hooks"
+import { getLocalizedPage, localizePath } from "utils/localize"
 
 const LocaleSwitch = ({ pageContext }) => {
   const isMounted = useRef(false)
   const select = useRef()
   const router = useRouter()
-  const [locale, setLocale] = useState('')
+  const [locale, setLocale] = useState("")
   const [showing, setShowing] = useState(false)
 
   const handleLocaleChange = async (selectedLocale: string) => {
     // Persist the user's language preference
     // https://nextjs.org/docs/advanced-features/i18n-routing#leveraging-the-next_locale-cookie
-    Cookies.set('NEXT_LOCALE', selectedLocale)
+    Cookies.set("NEXT_LOCALE", selectedLocale)
     setLocale(selectedLocale)
   }
 
@@ -27,7 +27,7 @@ const LocaleSwitch = ({ pageContext }) => {
   useOnClickOutside(select, () => setShowing(false))
 
   useEffect(() => {
-    const localeCookie = Cookies.get('NEXT_LOCALE')
+    const localeCookie = Cookies.get("NEXT_LOCALE")
     if (!localeCookie) {
       handleLocaleChangeRef.current(router.locale)
     }
@@ -85,7 +85,7 @@ const LocaleSwitch = ({ pageContext }) => {
       </button>
       <div
         className={`mt-1 w-full rounded-md bg-white p-1 shadow-lg ${
-          showing ? 'absolute' : 'hidden'
+          showing ? "absolute" : "hidden"
         }`}
       >
         {pageContext.localizedPaths &&

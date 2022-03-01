@@ -1,6 +1,6 @@
-import { ReactElement } from 'react'
-import Image from 'next/image'
-import classNames from 'classnames'
+import { ReactElement } from "react"
+import Image from "next/image"
+import classNames from "classnames"
 
 interface ImageItem {
   fullUrl: string
@@ -21,8 +21,8 @@ export default function CoverImageComp({
 }: ImageItem): ReactElement {
   return (
     <div
-      className={classNames('container mx-auto block ', {
-        'border-canary-primary-500 border-b-8': image_border === true,
+      className={classNames("container mx-auto block ", {
+        "border-canary-primary-500 border-b-8": image_border === true,
       })}
     >
       <Image

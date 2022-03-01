@@ -1,9 +1,9 @@
-import CustomButton from '@/components/elements/custom-button'
-import Link from 'next/link'
-import { useEffect } from 'react'
+import CustomButton from "@/components/elements/custom-button"
+import Link from "next/link"
+import { useEffect } from "react"
 export default function Custom404() {
   useEffect(() => {
-    window.dataLayer.push({ event: '404 page hit' })
+    window.dataLayer.push({ event: "404 page hit" })
   }, [])
   return (
     <div className="my-auto">

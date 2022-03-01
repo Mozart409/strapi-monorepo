@@ -1,4 +1,4 @@
-import { getStrapiMedia } from 'utils/media'
+import { getStrapiMedia } from "utils/media"
 
 interface VideoProps {
   media: IMedia
