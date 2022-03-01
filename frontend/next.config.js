@@ -21,6 +21,7 @@ const nextConfig = {
     ],
   },
   async redirects() {
+
     return [
       {
         source: "/cms",
@@ -189,6 +190,7 @@ const nextConfig = {
         permanent: true,
       },
     ]
+
   },
   webpack: (config, { dev, isServer }) => {
     if (!dev && !isServer) {
