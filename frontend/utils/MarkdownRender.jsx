@@ -2,7 +2,9 @@
 import Link from "next/link"
 import ReactMarkdown from "react-markdown"
 import slugify from "slugify"
+
 import classNames from "classnames"
+
 const MarkdownRender = (props) => {
   const customRender = {
     a: ({ href, children, title, ...props }) => {
