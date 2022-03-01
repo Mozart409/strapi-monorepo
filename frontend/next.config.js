@@ -21,7 +21,174 @@ const nextConfig = {
     ],
   },
   async redirects() {
-    return []
+    return [
+      {
+        source: "/cms",
+        destination: "/",
+        permanent: true,
+      },
+      {
+        source: "/cookie-consent",
+        destination: "/",
+        permanent: true,
+      },
+      {
+        source: "/webanalyse",
+        destination: "/",
+        permanent: true,
+      },
+      {
+        source: "/seo-analyse-seo-beratung",
+        destination: "/",
+        permanent: true,
+      },
+      {
+        source: "/ads.txt",
+        destination: "/",
+        permanent: true,
+      },
+      {
+        source: "/apple-app-site-association",
+        destination: "/kontakt",
+        permanent: true,
+      },
+      {
+        source: "/.well-known/apple-app-site-association",
+        destination: "/",
+        permanent: true,
+      },
+      {
+        source: "/ueber-mich",
+        destination: "/",
+        permanent: true,
+      },
+      {
+        source: "/firstspirit-spezialistin",
+        destination: "/",
+        permanent: true,
+      },
+      {
+        source: "/de/philosophie/herzlichwillkommen.html",
+        destination: "/",
+        permanent: true,
+      },
+      {
+        source: "/webanalyse-die-wirkt",
+        destination: "/",
+        permanent: true,
+      },
+      {
+        source: "/static/Isabell-Mader-8280fb855241d09f06ad83c24798b29b.jpg",
+        destination: "/",
+        permanent: true,
+      },
+      {
+        source: "/webanalyse-die-wirkt",
+        destination: "/",
+        permanent: true,
+      },
+      {
+        source: "/seo-analyse",
+        destination: "/",
+        permanent: true,
+      },
+      {
+        source: "/wp-content/uploads/Laptop-mit-Statistiken-768x509.jpg",
+        destination: "/",
+        permanent: true,
+      },
+      {
+        source: "/wp-content/uploads/Logo_mader_150.png",
+        destination: "/",
+        permanent: true,
+      },
+      {
+        source: "/index.php/single-post",
+        destination: "/",
+        permanent: true,
+      },
+      {
+        source: "/webanalyse-mit-google-analytics-seo-adwords",
+        destination: "/",
+        permanent: true,
+      },
+      {
+        source: "/index.php/ct-menu-item-13",
+        destination: "/",
+        permanent: true,
+      },
+      {
+        source: "/datenschutzerklaerung",
+        destination: "/",
+        permanent: true,
+      },
+      {
+        source: "/icons/icon-72x72.png",
+        destination: "/",
+        permanent: true,
+      },
+      {
+        source: "/uebermich",
+        destination: "/",
+        permanent: true,
+      },
+      {
+        source: "/index.php",
+        destination: "/",
+        permanent: true,
+      },
+      {
+        source: "/webanalyse-tools",
+        destination: "/",
+        permanent: true,
+      },
+      {
+        source: "/haftungsausschluss",
+        destination: "/",
+        permanent: true,
+      },
+      {
+        source: "/seo-analyse-kostenlos",
+        destination: "/",
+        permanent: true,
+      },
+      {
+        source: "/firstspirit",
+        destination: "/",
+        permanent: true,
+      },
+      {
+        source: "/author/isabell",
+        destination: "/",
+        permanent: true,
+      },
+      {
+        source: "/de/anfrage.html",
+        destination: "/kontakt",
+        permanent: true,
+      },
+      {
+        source: "/website-anfrage",
+        destination: "/kontakt",
+        permanent: true,
+      },
+
+      {
+        source: "/landingpage-ebook",
+        destination: "https://online-marketing.company/landingpage-ebook",
+        permanent: true,
+      },
+      {
+        source: "/technik",
+        destination: "/schnelle-webseite",
+        permanent: true,
+      },
+      {
+        source: "/google.com",
+        destination: "/",
+        permanent: true,
+      },
+    ]
   },
   webpack: (config, { dev, isServer }) => {
     if (!dev && !isServer) {
