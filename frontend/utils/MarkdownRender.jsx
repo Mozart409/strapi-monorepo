@@ -3,7 +3,7 @@ import Link from "next/link"
 import ReactMarkdown from "react-markdown"
 import slugify from "slugify"
 
-const MarkdownRender = ({ children }) => {
+const MarkdownRender = (props) => {
   const customRender = {
     a: ({ href, children, title, ...props }) => {
       if (href.startsWith("#")) {
@@ -172,11 +172,16 @@ const MarkdownRender = ({ children }) => {
   return (
     <div>
       <ReactMarkdown
-        className="prose prose-lg mx-auto prose-headings:underline prose-a:text-primary-600 lg:prose-2xl"
+        className={classNames(
+          "prose prose-lg mx-auto prose-headings:underline prose-a:text-primary-600 lg:prose-2xl",
+          {
+            "prose mx-auto max-w-none text-center": props?.center,
+          }
+        )}
         skipHtml={true}
         components={customRender}
       >
-        {children}
+        {props.children}
       </ReactMarkdown>
     </div>
   )
