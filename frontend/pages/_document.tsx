@@ -28,6 +28,7 @@ export default class MyDocument extends Document {
           <meta property="csp-nonce" content={this.props.nonce} />
           <script
             id="usercentrics-cmp"
+            data-cy="Usercentrics"
             data-settings-id={process.env.NEXT_PUBLIC_USERCENTRICS_SETTINGS_ID}
             src="https://app.usercentrics.eu/browser-ui/latest/loader.js"
             async
@@ -38,6 +39,7 @@ export default class MyDocument extends Document {
             type="text/plain"
             async
             defer
+            data-cy="GTM"
             dangerouslySetInnerHTML={{
               __html: `
               (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':

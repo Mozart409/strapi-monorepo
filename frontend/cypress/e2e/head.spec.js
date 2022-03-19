@@ -8,7 +8,8 @@
 describe("The Home Page", () => {
   it("successfully loads", () => {
     cy.visit("/") // change URL to match your dev URL
-    cy.get("button").should("contain", "Alles akzeptieren").click()
-    cy.get("[data-testid='uc-accept-all-button']").click()
+
+    cy.dataCy("Usercentrics")
+    cy.dataCy("GTM")
   })
 })
