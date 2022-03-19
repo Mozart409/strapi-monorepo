@@ -26,3 +26,9 @@ jobs:
         with:
           build: yarn run build
           start: yarn start
+          wait-on: 'http://localhost:3000'
+          env:
+            NEXT_PUBLIC_STRAPI_API_URL: ${{ secrets.NEXT_PUBLIC_STRAPI_API_URL }}
+            NEXT_PUBLIC_FRONTEND_DOMAIN: ${{ secrets.NEXT_PUBLIC_FRONTEND_DOMAIN }}
+            NEXT_PUBLIC_GTM_ID: ${{ secrets.NEXT_PUBLIC_GTM_ID }}
+            NEXT_PUBLIC_USERCENTRICS_SETTINGS_ID: ${{ secrets.NEXT_PUBLIC_USERCENTRICS_SETTINGS_ID }}
