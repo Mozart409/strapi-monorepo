@@ -1,6 +1,10 @@
-name: Compressed Size
+name: Build and Deyploy
 
-on: [pull_request]
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
 
 jobs:
   build:
@@ -13,7 +17,4 @@ jobs:
           node-version: '14'
           cache: 'yarn'
       - run: yarn install
-   
-    steps:
-      - uses: actions/checkout@v2
-      - uses: preactjs/compressed-size-action@v2
+      - run: yarn format
