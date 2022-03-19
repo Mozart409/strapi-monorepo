@@ -9,7 +9,7 @@ export default class MyDocument extends Document {
 
     let contentSecurityPolicy = ""
     if (process.env.NODE_ENV === "production") {
-      contentSecurityPolicy = `default-src 'self'; style-src 'nonce-${nonce}';`
+      contentSecurityPolicy = `frame-src 'self', www.googletagmanager.com;default-src 'self', https://www.googletagmanager.com, https://googletagmanager.com, https://app.usercentrics.eu, https://unpkg.com, https://beammeup-strapi-monorepo-production.up.railway.app/, https://api.websitecarbon.com; style-src 'nonce-${nonce}';`
     } else {
       // react-refresh needs 'unsafe-eval'
       // Next.js needs 'unsafe-inline' during development https://github.com/vercel/next.js/blob/canary/packages/next/client/dev/fouc.js
@@ -26,14 +26,14 @@ export default class MyDocument extends Document {
         <Head>
           {/* @ts-ignore */}
           <meta property="csp-nonce" content={this.props.nonce} />
-          {/* <script
+          <script
             id="usercentrics-cmp"
             data-settings-id={process.env.NEXT_PUBLIC_USERCENTRICS_SETTINGS_ID}
             src="https://app.usercentrics.eu/browser-ui/latest/loader.js"
             async
-          ></script> */}
+          ></script>
 
-          {/* <script
+          <script
             data-usercentrics="Google Tag Manager"
             type="text/plain"
             async
@@ -47,7 +47,7 @@ export default class MyDocument extends Document {
               })(window,document,'script','dataLayer', '${process.env.NEXT_PUBLIC_GTM_ID}');
               `,
             }}
-          /> */}
+          />
           <link rel="preload" href="/fonts/inter-var-latin.woff2"></link>
 
           <link rel="preload" href="/fonts/fira/FiraSans-Bold.woff" />

@@ -1,6 +1,6 @@
 {
-  "extends": ["next", "prettier"],
-  "plugins": ["prettier", "simple-import-sort"],
+  "extends": ["next", "prettier", "plugin:cypress/recommended"],
+  "plugins": ["prettier", "simple-import-sort", "cypress"],
   "rules": {
     "prettier/prettier": [
       "error",

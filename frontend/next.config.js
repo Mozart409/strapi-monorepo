@@ -80,15 +80,13 @@ const nextConfig = {
             key: "X-Frame-Options",
             value: `SAMEORIGIN`,
           },
-          {
-            key: "Content-Security-Policy",
-            value: `frame-ancestors 'self`,
-          },
         ],
       },
     ]
 
-    console.info("Using headers:", JSON.stringify(headers, null, 2))
+    if (process.env.NODE_ENV === "production") {
+      console.info("Using headers:", JSON.stringify(headers, null, 2))
+    }
 
     return headers
   },
