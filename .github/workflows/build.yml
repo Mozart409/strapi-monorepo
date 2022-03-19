@@ -28,6 +28,7 @@ jobs:
           start: yarn start
           wait-on: 'http://localhost:3000'
           env:
+            path: frontend
             NEXT_PUBLIC_STRAPI_API_URL: ${{ secrets.NEXT_PUBLIC_STRAPI_API_URL }}
             NEXT_PUBLIC_FRONTEND_DOMAIN: ${{ secrets.NEXT_PUBLIC_FRONTEND_DOMAIN }}
             NEXT_PUBLIC_GTM_ID: ${{ secrets.NEXT_PUBLIC_GTM_ID }}
